@@ -2,3 +2,5 @@
 eclipse
 
 *.iws
+
+out/
