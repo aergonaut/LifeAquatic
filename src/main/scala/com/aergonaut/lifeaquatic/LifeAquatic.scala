@@ -1,11 +1,11 @@
 package com.aergonaut.lifeaquatic
 
+import com.aergonaut.lifeaquatic.common.Proxy
+import com.aergonaut.lifeaquatic.item.ModItems
 import com.aergonaut.lifeaquatic.util.Logger
 import cpw.mods.fml.common.{SidedProxy, Mod}
 import cpw.mods.fml.common.Mod.EventHandler
 import cpw.mods.fml.common.event.{FMLPostInitializationEvent, FMLInitializationEvent, FMLPreInitializationEvent}
-
-import com.aergonaut.lifeaquatic.common.Proxy
 
 @Mod(name = LifeAquatic.name, version = LifeAquatic.version, modid = LifeAquatic.modid, modLanguage = "scala")
 object LifeAquatic {
@@ -18,7 +18,9 @@ object LifeAquatic {
 
   @EventHandler
   def preInit(event: FMLPreInitializationEvent): Unit = {
+    Logger.info(s"${LifeAquatic.name} pre-initialization starting")
 
+    ModItems.init()
   }
 
   @EventHandler

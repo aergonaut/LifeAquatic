@@ -2,7 +2,7 @@ package com.aergonaut.lifeaquatic.util
 
 import com.aergonaut.lifeaquatic.LifeAquatic
 import cpw.mods.fml.common.FMLLog
-import org.apache.logging.log4j.{Level, Logger => Log4JLogger}
+import org.apache.logging.log4j.Level
 
 object Logger {
   def log(level: Level, msg: String): Unit = {
