@@ -1,5 +1,6 @@
 package com.aergonaut.lifeaquatic
 
+import com.aergonaut.lifeaquatic.block.ModBlocks
 import com.aergonaut.lifeaquatic.common.Proxy
 import com.aergonaut.lifeaquatic.item.ModItems
 import com.aergonaut.lifeaquatic.util.{Constants, Logger}
@@ -18,6 +19,7 @@ object LifeAquatic {
     Logger.info(s"${Constants.name} pre-initialization starting")
 
     ModItems.init()
+    ModBlocks.init()
   }
 
   @EventHandler
