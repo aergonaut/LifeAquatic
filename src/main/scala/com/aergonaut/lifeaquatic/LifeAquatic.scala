@@ -1,9 +1,11 @@
 package com.aergonaut.lifeaquatic
 
-import cpw.mods.fml.common.Mod
+import com.aergonaut.lifeaquatic.util.Logger
+import cpw.mods.fml.common.{SidedProxy, Mod}
 import cpw.mods.fml.common.Mod.EventHandler
 import cpw.mods.fml.common.event.{FMLPostInitializationEvent, FMLInitializationEvent, FMLPreInitializationEvent}
-import org.apache.logging.log4j.{Level, Logger}
+
+import com.aergonaut.lifeaquatic.common.Proxy
 
 @Mod(name = LifeAquatic.name, version = LifeAquatic.version, modid = LifeAquatic.modid, modLanguage = "scala")
 object LifeAquatic {
@@ -11,11 +13,12 @@ object LifeAquatic {
   final val version = "1.7.10-0.0.1"
   final val modid = "lifeaquatic"
 
-  var logger: Logger = null
+  @SidedProxy(clientSide = "com.aergonaut.lifeaquatic.client.ClientProxy", serverSide = "com.aergonaut.lifeaquatic.server.ServerProxy")
+  var proxy: Proxy = null
 
   @EventHandler
   def preInit(event: FMLPreInitializationEvent): Unit = {
-    logger = event.getModLog
+
   }
 
   @EventHandler
@@ -25,6 +28,6 @@ object LifeAquatic {
 
   @EventHandler
   def postInit(event: FMLPostInitializationEvent): Unit = {
-    logger.log(Level.INFO, s"${LifeAquatic.name} has loaded successfully.")
+    Logger.info(s"${LifeAquatic.name} has successfully loaded.")
   }
 }
