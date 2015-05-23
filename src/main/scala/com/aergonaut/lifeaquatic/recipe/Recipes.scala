@@ -13,7 +13,7 @@ object Recipes {
       "ppp",
       "ppp",
       "ppp",
-      'p':java.lang.Character, new ItemStack(ModItems.pearl)
+      char2Character('p'), new ItemStack(ModItems.pearl)
     )
 
     // red cap
@@ -21,7 +21,7 @@ object Recipes {
       "rrr",
       "r r",
       "   ",
-      'r':java.lang.Character, new ItemStack(Blocks.wool, 1, 14)
+      char2Character('r'), new ItemStack(Blocks.wool, 1, 14)
     )
   }
 }
