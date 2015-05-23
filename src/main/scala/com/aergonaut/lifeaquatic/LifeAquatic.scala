@@ -3,6 +3,7 @@ package com.aergonaut.lifeaquatic
 import com.aergonaut.lifeaquatic.block.ModBlocks
 import com.aergonaut.lifeaquatic.common.Proxy
 import com.aergonaut.lifeaquatic.item.ModItems
+import com.aergonaut.lifeaquatic.recipe.Recipes
 import com.aergonaut.lifeaquatic.util.{Constants, Logger}
 import cpw.mods.fml.common.{SidedProxy, Mod}
 import cpw.mods.fml.common.Mod.EventHandler
@@ -24,7 +25,7 @@ object LifeAquatic {
 
   @EventHandler
   def init(event: FMLInitializationEvent): Unit = {
-
+    Recipes.init()
   }
 
   @EventHandler
