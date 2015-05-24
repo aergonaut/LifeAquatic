@@ -8,7 +8,7 @@ object Names {
 
   object Items {
     final val Pearl = "Pearl"
-    
+
     object Armor {
       final val LinenHelmet = "LinenHelmet"
     }

@@ -5,9 +5,9 @@ import cpw.mods.fml.common.FMLLog
 import org.apache.logging.log4j.Level
 
 object Logger {
-  def log(level: Level, msg: String): Unit = {
+  protected def log(level: Level, msg: String): Unit = {
     FMLLog.log(Constants.ModID, level, msg)
   }
 
-  def info(msg: String) = log(Level.INFO, msg)
+  def info(msg: String): Unit = log(Level.INFO, msg)
 }

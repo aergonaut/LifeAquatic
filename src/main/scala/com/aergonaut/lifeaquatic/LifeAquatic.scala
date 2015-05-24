@@ -14,7 +14,7 @@ import cpw.mods.fml.common.event.{FMLPostInitializationEvent, FMLInitializationE
 object LifeAquatic {
 
   @SidedProxy(clientSide = "com.aergonaut.lifeaquatic.client.ClientProxy", serverSide = "com.aergonaut.lifeaquatic.server.ServerProxy")
-  var proxy: Proxy = null
+  var proxy: Proxy = _
 
   @EventHandler
   def preInit(event: FMLPreInitializationEvent): Unit = {

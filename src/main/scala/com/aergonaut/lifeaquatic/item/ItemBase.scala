@@ -8,14 +8,14 @@ import net.minecraft.item.{ItemStack, Item}
 class ItemBase(name: String) extends Item {
   setUnlocalizedName(name)
 
-  override def getUnlocalizedName() = s"item.${Textures.ResourcePrefix}${getUnwrappedUnlocalizedName(super.getUnlocalizedName())}"
+  override def getUnlocalizedName(): String = s"item.${Textures.ResourcePrefix}${getUnwrappedUnlocalizedName(super.getUnlocalizedName())}"
 
-  override def getUnlocalizedName(stack: ItemStack) = getUnlocalizedName()
+  override def getUnlocalizedName(stack: ItemStack): String = getUnlocalizedName()
 
   @SideOnly(Side.CLIENT)
   override def registerIcons(iconRegister: IIconRegister): Unit = {
     itemIcon = iconRegister.registerIcon(getUnlocalizedName().split('.').last)
   }
 
-  def getUnwrappedUnlocalizedName(unlocalizedName: String) = unlocalizedName.split('.').last
+  protected def getUnwrappedUnlocalizedName(unlocalizedName: String) = unlocalizedName.split('.').last
 }

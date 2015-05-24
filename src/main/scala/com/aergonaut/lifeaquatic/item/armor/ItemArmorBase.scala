@@ -11,19 +11,17 @@ import net.minecraft.item.ItemArmor.ArmorMaterial
 class ItemArmorBase(name: String, material: ArmorMaterial, armorType: Int, textureName: String) extends ItemArmor(material, 0, armorType) {
   setUnlocalizedName(name)
 
-  Logger.info(s"Created armor ${name} for slot ${armorType} with texture ${textureName}")
+  override def getUnlocalizedName(): String = s"item.${Textures.ResourcePrefix}${getUnwrappedUnlocalizedName(super.getUnlocalizedName())}"
 
-  override def getUnlocalizedName() = s"item.${Textures.ResourcePrefix}${getUnwrappedUnlocalizedName(super.getUnlocalizedName())}"
-
-  override def getUnlocalizedName(stack: ItemStack) = getUnlocalizedName()
+  override def getUnlocalizedName(stack: ItemStack): String = getUnlocalizedName()
 
   @SideOnly(Side.CLIENT)
-  override def registerIcons(iIconRegister: IIconRegister) = {
+  override def registerIcons(iIconRegister: IIconRegister): Unit = {
     itemIcon = iIconRegister.registerIcon(getUnlocalizedName().split('.').last)
   }
 
-  def getUnwrappedUnlocalizedName(unlocalizedName: String) = unlocalizedName.split('.').last
+  protected def getUnwrappedUnlocalizedName(unlocalizedName: String) = unlocalizedName.split('.').last
 
-  override def getArmorTexture(itemStack: ItemStack, entity: Entity, slot: Int, armorType: String) =
+  override def getArmorTexture(itemStack: ItemStack, entity: Entity, slot: Int, armorType: String): String =
     Textures.Armor.ArmorSheetFormat.format(textureName, slot)
 }

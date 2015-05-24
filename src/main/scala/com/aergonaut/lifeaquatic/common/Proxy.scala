@@ -1,9 +1,6 @@
 package com.aergonaut.lifeaquatic.common
 
-trait Proxy {
+trait Proxy
 
-}
+class CommonProxy extends Proxy
 
-class CommonProxy extends Proxy {
-
-}
