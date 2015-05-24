@@ -1,5 +1,7 @@
 package com.aergonaut.lifeaquatic.block
 
-class PearlBlock extends BlockBase("PearlBlock") {
+import com.aergonaut.lifeaquatic.util.constants.Names
+
+class PearlBlock extends BlockBase(Names.Blocks.PearlBlock) {
 
 }

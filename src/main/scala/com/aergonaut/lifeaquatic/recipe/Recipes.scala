@@ -13,14 +13,20 @@ object Recipes {
       "ppp",
       "ppp",
       "ppp",
-      char2Character('p'), new ItemStack(ModItems.pearl)
+      char2Character('p'), new ItemStack(ModItems.Pearl)
     )
 
-    // red cap
-    GameRegistry.addRecipe(new ItemStack(ModItems.redCap),
+    // linen helmet
+    GameRegistry.addRecipe(new ItemStack(ModItems.LinenHelmet),
       "rrr",
       "r r",
       "   ",
+      char2Character('r'), new ItemStack(Blocks.wool, 1, 14)
+    )
+    GameRegistry.addRecipe(new ItemStack(ModItems.LinenHelmet),
+      "   ",
+      "rrr",
+      "r r",
       char2Character('r'), new ItemStack(Blocks.wool, 1, 14)
     )
   }

@@ -3,13 +3,14 @@ package com.aergonaut.lifeaquatic.block
 import java.util
 
 import com.aergonaut.lifeaquatic.item.ModItems
+import com.aergonaut.lifeaquatic.util.constants.Names
 import cpw.mods.fml.relauncher.{Side, SideOnly}
 import net.minecraft.client.renderer.texture.IIconRegister
 import net.minecraft.item.ItemStack
 import net.minecraft.util.IIcon
 import net.minecraft.world.World
 
-class Oyster extends BlockBase("Oyster") {
+class Oyster extends BlockBase(Names.Blocks.Oyster) {
   setHardness(3.0F)
   setResistance(5.0F)
 
@@ -32,7 +33,7 @@ class Oyster extends BlockBase("Oyster") {
   override def getDrops(world: World, x: Int, y: Int, z: Int, metadata: Int, fortune: Int): util.ArrayList[ItemStack] = {
     val count = Math.max(world.rand.nextInt(fortune + MAX_PEARLS), MAX_PEARLS)
     val array = new util.ArrayList[ItemStack]()
-    array.add(new ItemStack(ModItems.pearl, count))
+    array.add(new ItemStack(ModItems.Pearl, count))
     array
   }
 }

@@ -1,13 +1,17 @@
 package com.aergonaut.lifeaquatic.item
 
+import com.aergonaut.lifeaquatic.item.armor.{ItemArmorBase, LinenHelmet}
+import com.aergonaut.lifeaquatic.util.constants.Names
 import cpw.mods.fml.common.registry.GameRegistry
 
 object ModItems {
-  final val pearl: ItemBase = new Pearl
-  final val redCap: ItemBase = new RedCap
+  final val Pearl: ItemBase = new Pearl
+
+  final val LinenHelmet: ItemArmorBase = new LinenHelmet
 
   def init(): Unit = {
-    GameRegistry.registerItem(pearl, "Pearl")
-    GameRegistry.registerItem(redCap, "RedCap")
+    GameRegistry.registerItem(Pearl, Names.Items.Pearl)
+
+    GameRegistry.registerItem(LinenHelmet, Names.Items.Armor.LinenHelmet)
   }
 }

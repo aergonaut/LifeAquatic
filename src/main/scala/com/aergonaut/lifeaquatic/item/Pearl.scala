@@ -1,4 +1,6 @@
 package com.aergonaut.lifeaquatic.item
 
-class Pearl extends ItemBase("Pearl") {
+import com.aergonaut.lifeaquatic.util.constants.Names
+
+class Pearl extends ItemBase(Names.Items.Pearl) {
 }
