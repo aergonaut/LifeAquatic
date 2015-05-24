@@ -9,7 +9,7 @@ import net.minecraft.item.ItemStack
 object Recipes {
   def init(): Unit = {
     // pearl block
-    GameRegistry.addRecipe(new ItemStack(ModBlocks.pearlBlock),
+    GameRegistry.addRecipe(new ItemStack(ModBlocks.PearlBlock),
       "ppp",
       "ppp",
       "ppp",
