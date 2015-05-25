@@ -1,0 +1,5 @@
+---
+language: java
+before_script:
+  - ./gradlew setupCIWorkspace
+script: script/ci
