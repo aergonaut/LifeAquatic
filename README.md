@@ -34,6 +34,18 @@ see, please feel free to submit a pull request!
 3. Generate project files. If using Eclipse: `./gradlew eclipse`; if using
 IntelliJ: `./gradlew idea`
 
+#### "select an mcp conf dir for the deobfuscator"
+
+If you see this window, navigate to `$HOME/.gradle/caches/minecraft/net/minecraftforge/forge/$FORGE_VERSION/unpacked/conf`
+
+Depending on the circumstances, you may not be able to select the `.gradle`
+directory because it is hidden. If that is the case, type the absolute path into
+the path selection box.
+
+Click Select to save the setting. You shouldn't be prompted to select this again.
+
+This is raised by CodeChickenCore, which is the support library for NEI.
+
 ### Style
 
 Coding style is enforced by [ScalaStyle](http://www.scalastyle.org/). ScalaStyle
