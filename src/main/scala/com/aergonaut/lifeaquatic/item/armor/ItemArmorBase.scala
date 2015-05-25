@@ -1,19 +1,18 @@
 package com.aergonaut.lifeaquatic.item.armor
 
+import com.aergonaut.lifeaquatic.constants.Textures
 import com.aergonaut.lifeaquatic.creative.ModCreativeTabs
-import com.aergonaut.lifeaquatic.util.Logger
-import com.aergonaut.lifeaquatic.constants.{Textures, Constants}
 import cpw.mods.fml.relauncher.{Side, SideOnly}
 import net.minecraft.client.renderer.texture.IIconRegister
 import net.minecraft.entity.Entity
-import net.minecraft.item.{ItemStack, ItemArmor}
 import net.minecraft.item.ItemArmor.ArmorMaterial
+import net.minecraft.item.{ItemArmor, ItemStack}
 
 class ItemArmorBase(name: String, material: ArmorMaterial, armorType: Int, textureName: String) extends ItemArmor(material, 0, armorType) {
   setUnlocalizedName(name)
   setCreativeTab(ModCreativeTabs.LifeAquaticTab)
 
-  override def getUnlocalizedName(): String = s"item.${Textures.ResourcePrefix}${getUnwrappedUnlocalizedName(super.getUnlocalizedName())}"
+  override def getUnlocalizedName: String = s"item.${Textures.ResourcePrefix}${getUnwrappedUnlocalizedName(super.getUnlocalizedName())}"
 
   override def getUnlocalizedName(stack: ItemStack): String = getUnlocalizedName()
 
