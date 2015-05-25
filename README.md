@@ -1,9 +1,13 @@
-# LifeAquatic
+# Life Aquatic
 
-**Life Aquatic** is a Minecraft mod that adds various gameplay elements focused around underwater and aquatic play.
+[![Build Status](https://travis-ci.org/aergonaut/LifeAquatic.svg?branch=master)](https://travis-ci.org/aergonaut/LifeAquatic)
 
-This is still under heavy development and this is my first foray into mod development. _Definitely_ not ready to be used
-on a server unless you are willing to accept the risks!
+**Life Aquatic** is a Minecraft mod that adds various gameplay elements focused 
+around underwater and aquatic play.
+
+This is still under heavy development and this is my first foray into mod 
+development. _Definitely_ not ready to be used on a server unless you are
+willing to accept the risks!
 
 Features wishlist:
 
@@ -15,13 +19,20 @@ Features wishlist:
 
 ## Contributing
 
-This mod is open source! If you have an idea for a feature you would like to see, please feel free to submit a pull
-request!
+This mod is open source! If you have an idea for a feature you would like to
+see, please feel free to submit a pull request!
 
 1. Fork the repo
 2. Create a branch
 3. Push your branch to GitHub
 4. Open a Pull Request!
+
+## Style
+
+Coding style is enforced by [ScalaStyle](http://www.scalastyle.org/). ScalaStyle
+is run against every commit as part of each [build](https://travis-ci.org/aergonaut/LifeAquatic).
+
+To check style yourself, run `./gradlew scalaStye`.
 
 ## License
 
@@ -46,4 +57,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
