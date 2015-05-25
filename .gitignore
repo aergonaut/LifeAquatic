@@ -2,5 +2,7 @@
 eclipse
 
 *.iws
+*.iml
+*.ipr
 
 out/
