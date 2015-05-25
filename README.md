@@ -27,7 +27,14 @@ see, please feel free to submit a pull request!
 3. Push your branch to GitHub
 4. Open a Pull Request!
 
-## Style
+### Dev environment setup
+
+1. Choose your editor. Eclipse and IntelliJ are supported.
+2. Download the deobfuscated Minecraft sources: `./gradlew setupDecompWorkspace`
+3. Generate project files. If using Eclipse: `./gradlew eclipse`; if using
+IntelliJ: `./gradlew idea`
+
+### Style
 
 Coding style is enforced by [ScalaStyle](http://www.scalastyle.org/). ScalaStyle
 is run against every commit as part of each [build](https://travis-ci.org/aergonaut/LifeAquatic).
