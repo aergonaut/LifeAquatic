@@ -24,5 +24,5 @@ class ItemArmorBase(name: String, material: ArmorMaterial, armorType: Int, textu
   protected def getUnwrappedUnlocalizedName(unlocalizedName: String) = unlocalizedName.split('.').last
 
   override def getArmorTexture(itemStack: ItemStack, entity: Entity, slot: Int, armorType: String): String =
-    Textures.Armor.ArmorSheetFormat.format(textureName, slot)
+    Textures.Armor.ArmorSheetFormat.format(textureName, if (slot == 2) 1 else 0)
 }

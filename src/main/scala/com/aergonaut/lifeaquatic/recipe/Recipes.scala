@@ -29,5 +29,14 @@ object Recipes {
       "r r",
       char2Character('r'), new ItemStack(Blocks.wool, 1, 14)
     )
+
+    // linen chest
+    GameRegistry.addRecipe(new ItemStack(ModItems.LinenChest),
+      "w w",
+      "wbw",
+      "www",
+      char2Character('w'), new ItemStack(Blocks.wool, 1, 3),
+      char2Character('b'), new ItemStack(Blocks.wooden_button)
+    )
   }
 }

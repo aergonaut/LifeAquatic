@@ -11,6 +11,7 @@ object Names {
 
     object Armor {
       final val LinenHelmet = "LinenHelmet"
+      final val LinenChest = "LinenChest"
     }
   }
 
