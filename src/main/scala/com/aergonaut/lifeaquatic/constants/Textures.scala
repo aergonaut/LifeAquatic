@@ -1,4 +1,4 @@
-package com.aergonaut.lifeaquatic.util.constants
+package com.aergonaut.lifeaquatic.constants
 
 object Textures {
   final val ResourcePrefix = s"${Constants.ModID}:"

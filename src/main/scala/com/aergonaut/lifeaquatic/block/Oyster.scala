@@ -3,7 +3,7 @@ package com.aergonaut.lifeaquatic.block
 import java.util
 
 import com.aergonaut.lifeaquatic.item.ModItems
-import com.aergonaut.lifeaquatic.util.constants.Names
+import com.aergonaut.lifeaquatic.constants.Names
 import cpw.mods.fml.relauncher.{Side, SideOnly}
 import net.minecraft.client.renderer.texture.IIconRegister
 import net.minecraft.item.ItemStack

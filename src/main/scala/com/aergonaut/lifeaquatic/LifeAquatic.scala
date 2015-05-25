@@ -5,7 +5,7 @@ import com.aergonaut.lifeaquatic.common.Proxy
 import com.aergonaut.lifeaquatic.item.ModItems
 import com.aergonaut.lifeaquatic.recipe.Recipes
 import com.aergonaut.lifeaquatic.util.Logger
-import com.aergonaut.lifeaquatic.util.constants.Constants
+import com.aergonaut.lifeaquatic.constants.Constants
 import cpw.mods.fml.common.{SidedProxy, Mod}
 import cpw.mods.fml.common.Mod.EventHandler
 import cpw.mods.fml.common.event.{FMLPostInitializationEvent, FMLInitializationEvent, FMLPreInitializationEvent}

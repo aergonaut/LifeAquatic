@@ -1,6 +1,6 @@
 package com.aergonaut.lifeaquatic.util
 
-import com.aergonaut.lifeaquatic.util.constants.Constants
+import com.aergonaut.lifeaquatic.constants.Constants
 import cpw.mods.fml.common.FMLLog
 import org.apache.logging.log4j.Level
 

@@ -1,6 +1,6 @@
 package com.aergonaut.lifeaquatic.block
 
-import com.aergonaut.lifeaquatic.util.constants.Names
+import com.aergonaut.lifeaquatic.constants.Names
 import cpw.mods.fml.common.registry.GameRegistry
 
 object ModBlocks {

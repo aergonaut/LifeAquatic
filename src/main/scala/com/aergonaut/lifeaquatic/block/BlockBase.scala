@@ -1,6 +1,6 @@
 package com.aergonaut.lifeaquatic.block
 
-import com.aergonaut.lifeaquatic.util.constants.{Textures, Constants}
+import com.aergonaut.lifeaquatic.constants.{Textures, Constants}
 import net.minecraft.block.Block
 import net.minecraft.block.material.Material
 import net.minecraft.client.renderer.texture.IIconRegister

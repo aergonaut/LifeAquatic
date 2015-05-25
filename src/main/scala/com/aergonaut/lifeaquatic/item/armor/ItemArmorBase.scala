@@ -1,7 +1,7 @@
 package com.aergonaut.lifeaquatic.item.armor
 
 import com.aergonaut.lifeaquatic.util.Logger
-import com.aergonaut.lifeaquatic.util.constants.{Textures, Constants}
+import com.aergonaut.lifeaquatic.constants.{Textures, Constants}
 import cpw.mods.fml.relauncher.{Side, SideOnly}
 import net.minecraft.client.renderer.texture.IIconRegister
 import net.minecraft.entity.Entity
