@@ -21,9 +21,28 @@ apply plugin: 'scala'
 apply plugin: 'scalaStyle'
 apply plugin: 'forge'
 
-version = "1.7.10-0.0.1"
+ext.configFile = file "build.properties"
+
+configFile.withReader {
+    def prop = new Properties()
+    prop.load(it)
+    project.ext.config = new ConfigSlurper().parse prop
+}
+
+version = "${config.minecraft_version}-${config.mod_version}"
 group= "com.aergonaut.lifeaquatic" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "LifeAquatic"
+
+minecraft {
+    version = config.minecraft_version + "-" + config.forge_version
+
+    replaceIn "constants/Constants.scala"
+    replace "@@MOD_VERSION@@", config.mod_version
+    replace "@@MINECRAFT_VERSION@@", config.minecraft_version
+    replace "@@VERSION@@", "${config.minecraft_version}-${config.mod_version}"
+
+    runDir = "eclipse"
+}
 
 sourceSets {
     main {
@@ -44,11 +63,6 @@ scalaStyle {
     source = "src/main/scala"
 }
 
-minecraft {
-    version = "1.7.10-10.13.3.1408-1.7.10"
-    runDir = "eclipse"
-}
-
 repositories {
     maven { // the repo from which to get NEI and stuff
         name 'CB Repo'
@@ -59,6 +73,7 @@ repositories {
         url "http://mobiusstrip.eu/maven"
     }
 }
+
 dependencies {
     compile('mcp.mobius.waila:Waila:1.5.11-RC2-NONEI_1.7.10') {
         exclude group: 'mcp.mobius.waila'
@@ -79,7 +94,7 @@ processResources
         include 'mcmod.info'
 
         // replace version and mcversion
-        expand 'version':project.version, 'mcversion':project.minecraft.version
+        expand 'version':project.version, 'mcversion':project.config.minecraft_version
     }
 
     // copy everything else, thats not the mcmod.info
