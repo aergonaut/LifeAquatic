@@ -48,28 +48,29 @@ abstract class FeatureGenBase(name: String, biomesRestriction: GenRestriction.Re
   override def getFeatureName: String = name
 
   override def generateFeature(random: Random, chunkX: Int, chunkZ: Int, world: World, newGen: Boolean): Boolean = {
-    if (!newGen && !regen) {
-      return false
-    }
-    if (dimensionsRestriction != GenRestriction.None) {
-      if (dimensionsRestriction == GenRestriction.Blacklist == (dimensions contains world.provider.dimensionId)) {
-        return false
-      }
-    }
-    if (random.nextInt(rarity) != 0) {
-      return false
-    }
+    (newGen || regen) &&
+    canGenerateInDimension(world) &&
+    random.nextInt(rarity) == 0 &&
     generateFeature(random, chunkX, chunkZ, world)
   }
 
   def generateFeature(random: Random, chunkX: Int, chunkZ: Int, world: World): Boolean
 
-  protected def canGenerateInBiome(world: World, x: Int, z: Int, random: Random): Boolean = {
-    if (biomesRestriction != GenRestriction.None) {
+  protected def canGenerateInBiome(world: World, x: Int, z: Int, random: Random): Boolean = biomesRestriction match {
+    case GenRestriction.None => true
+
+    case _ => {
       val biome = world.getBiomeGenForCoords(x, z)
       !(biomesRestriction == GenRestriction.Blacklist == biomes.contains(biome, random))
-    } else {
-      true
+    }
+  }
+
+  protected def canGenerateInDimension(world: World): Boolean = dimensionsRestriction match {
+    case GenRestriction.None => true
+
+    case _ => {
+      val dimID = world.provider.dimensionId
+      !(dimensionsRestriction == GenRestriction.Blacklist == (dimensions contains dimID))
     }
   }
 }

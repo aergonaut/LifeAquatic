@@ -14,19 +14,19 @@ class FeatureGenUnderwater(name: String, worldGen: WorldGenerator, materials: Li
 
   addDimensions(Set(-1, 1))
 
-  // Find the deepest underwater y-coord at the given x and z
+  // Determine if the surface y-coord at a point is underwater.
   //
-  // This will search down at a given x and z until it finds a block that is not water and that is underneath a block
-  // that is water.
+  // Underwater is defined as having 1 block of water directly above.
   //
   // Returns Some(y) if a y-coord is found, None otherwise.
-  protected def deepestUnderwaterY(random: Random, x: Int, z: Int, world: World): Option[Int] = {
+  protected def underwaterY(random: Random, x: Int, z: Int, world: World): Option[Int] = {
     val y = BlockHelper.getSurfaceBlockY(world, x, z) + 1
     val block = world.getBlock(x, y, z)
-    materials.find(mat => {
-      world.getBlock(x, y + 1, z).getMaterial == Material.water &&
-      block.isReplaceableOreGen(world, x, y, z, mat.block)
-    }).map(_ => y)
+    if (world.getBlock(x, y + 1, z).getMaterial != Material.water) {
+      None
+    } else {
+      materials.find(mat => block.isReplaceableOreGen(world, x, y, z, mat.block)).map(_ => y)
+    }
   }
 
   // Perform one generation of the given feature.
@@ -36,7 +36,7 @@ class FeatureGenUnderwater(name: String, worldGen: WorldGenerator, materials: Li
   //
   // Returns false if no suitable y-coord is found, otherwise returns the result of the world gen operation
   protected def generateOneRound(random: Random, x: Int, z: Int, world: World): Boolean =
-    deepestUnderwaterY(random, x, z, world).exists(y => worldGen.generate(world, random, x, y, z))
+    underwaterY(random, x, z, world).exists(y => worldGen.generate(world, random, x, y, z))
 
   // Potentially generate a feature.
   //
