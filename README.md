@@ -29,10 +29,12 @@ see, please feel free to submit a pull request!
 
 ### Dev environment setup
 
-1. Choose your editor. Eclipse and IntelliJ are supported.
-2. Download the deobfuscated Minecraft sources: `./gradlew setupDecompWorkspace`
-3. Generate project files. If using Eclipse: `./gradlew eclipse`; if using
-IntelliJ: `./gradlew idea`
+Run the setup script in `script/setup`. This will initialize the Git submodules,
+download the deobfuscated Minecraft source, and setup IntelliJ project files
+for you.
+
+If you want to use Eclipse, you can run `./gradlew eclipse` after running the
+setup script to generate the Eclipse project files.
 
 #### "select an mcp conf dir for the deobfuscator"
 

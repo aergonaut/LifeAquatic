@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+
+set -e
+
+git submodule init
+
+./gradlew clean setupDecompWorkspace idea
