@@ -1,0 +1,3 @@
+[submodule "vendor/CofHLib"]
+	path = vendor/CofHLib
+	url = https://github.com/CoFH/CoFHLib.git
