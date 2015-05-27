@@ -3,5 +3,6 @@
 set -e
 
 git submodule init
+git submodule update
 
 ./gradlew clean setupDecompWorkspace idea
