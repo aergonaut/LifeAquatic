@@ -1,7 +1,8 @@
-package com.aergonaut.lifeaquatic.world
+package com.aergonaut.lifeaquatic.world.feature
 
 import cofh.lib.util.WeightedRandomBlock
 import cofh.lib.world.biome.BiomeInfo
+import com.aergonaut.lifeaquatic.world.WorldGenOysters
 import com.aergonaut.lifeaquatic.world.util.GenRestriction
 import net.minecraft.init.Blocks
 import net.minecraft.item.ItemStack

@@ -3,6 +3,7 @@ package com.aergonaut.lifeaquatic.world
 import java.util.Random
 
 import cofh.api.world.{IFeatureGenerator, IFeatureHandler}
+import com.aergonaut.lifeaquatic.world.feature.FeatureGenOysters
 import cpw.mods.fml.common.IWorldGenerator
 import cpw.mods.fml.common.registry.GameRegistry
 import net.minecraft.world.World

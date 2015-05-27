@@ -1,4 +1,4 @@
-package com.aergonaut.lifeaquatic.world
+package com.aergonaut.lifeaquatic.world.feature
 
 import java.util.Random
 
