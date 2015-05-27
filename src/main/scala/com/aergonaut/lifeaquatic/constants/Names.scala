@@ -25,6 +25,7 @@ object Names {
     object Material {
       object Armor {
         final val Linen = "LinenArmor"
+        final val SwimTrunk = "SwimTrunkArmor"
       }
 
       final val Pearl = "material.pearl"
@@ -37,6 +38,7 @@ object Names {
     }
 
     object Armor {
+      final val SwimTrunkFaceMask = "SwimTrunkFaceMask"
       final val LinenHelmet = "LinenHelmet"
       final val LinenChest = "LinenChest"
     }

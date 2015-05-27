@@ -3,7 +3,7 @@ package com.aergonaut.lifeaquatic.item
 import cofh.lib.util.helpers.ItemHelper
 import com.aergonaut.lib.core.TInitializer
 import com.aergonaut.lifeaquatic.constants.Names
-import com.aergonaut.lifeaquatic.item.armor.{ItemArmorBase, LinenChest, LinenHelmet}
+import com.aergonaut.lifeaquatic.item.armor.{ItemArmorBase, LinenChest, LinenHelmet, SwimTrunkFaceMask}
 import com.aergonaut.lifeaquatic.item.manual.ItemAlmanac
 import com.aergonaut.lifeaquatic.item.material._
 import cpw.mods.fml.common.registry.GameRegistry
@@ -12,6 +12,7 @@ import net.minecraftforge.oredict.OreDictionary
 object ModItems extends TInitializer {
   final val Pearl: ItemBase = new Pearl
 
+  final val SwimTrunkFaceMask: ItemArmorBase = new SwimTrunkFaceMask
   final val LinenHelmet: ItemArmorBase = new LinenHelmet
   final val LinenChest: ItemArmorBase = new LinenChest
 
@@ -28,6 +29,7 @@ object ModItems extends TInitializer {
 
     GameRegistry.registerItem(Pearl, Names.Items.Material.Pearl)
 
+    GameRegistry.registerItem(SwimTrunkFaceMask, Names.Items.Armor.SwimTrunkFaceMask)
     GameRegistry.registerItem(LinenHelmet, Names.Items.Armor.LinenHelmet)
     GameRegistry.registerItem(LinenChest, Names.Items.Armor.LinenChest)
 

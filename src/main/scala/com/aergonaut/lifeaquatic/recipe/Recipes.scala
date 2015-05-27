@@ -25,6 +25,15 @@ object Recipes extends TInitializer {
       char2Character('p'), new ItemStack(ModItems.Pearl)
     )
 
+    // face mask
+    GameRegistry.addRecipe(new ItemStack(ModItems.SwimTrunkFaceMask),
+      "rrr",
+      "rgr",
+      "rrr",
+      char2Character('r'), new ItemStack(Blocks.wool),
+      char2Character('g'), new ItemStack(Blocks.glass)
+    )
+
     // linen helmet
     GameRegistry.addRecipe(new ItemStack(ModItems.LinenHelmet),
       "rrr",
