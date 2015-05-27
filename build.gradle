@@ -25,6 +25,20 @@ version = "1.7.10-0.0.1"
 group= "com.aergonaut.lifeaquatic" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "LifeAquatic"
 
+sourceSets {
+    main {
+        scala {
+            srcDir "src/main/scala"
+        }
+        java {
+            srcDir "vendor/CofHLib/src/main/java"
+        }
+        resources {
+            srcDir "src/main/resources"
+        }
+    }
+}
+
 scalaStyle {
     configLocation = "config/scalaStyle.xml"
     source = "src/main/scala"
