@@ -17,8 +17,10 @@ buildscript {
     }
 }
 
+apply plugin: 'java'
 apply plugin: 'scala'
 apply plugin: 'scalaStyle'
+apply plugin: 'distribution'
 apply plugin: 'forge'
 
 ext.configFile = file "build.properties"
@@ -102,3 +104,21 @@ processResources
         exclude 'mcmod.info'
     }
 }
+
+distributions {
+  main {
+    contents {
+      from(jar.destinationDir) {
+        include "*.jar"
+      }
+      
+      from("./") {
+        include "LICENSE"
+      }
+    }
+  }
+}
+
+tasks.distTar.compression = Compression.GZIP
+
+task release(dependsOn: ['clean', 'build', 'distZip', 'distTar'])
