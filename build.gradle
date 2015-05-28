@@ -85,8 +85,7 @@ dependencies {
     compile "codechicken:NotEnoughItems:1.7.10-1.0.4.105:dev"
 }
 
-processResources
-{
+processResources {
     // this will ensure that this task is redone when the versions change.
     inputs.property "version", project.version
     inputs.property "mcversion", project.minecraft.version
