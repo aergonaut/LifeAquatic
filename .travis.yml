@@ -1,6 +1,19 @@
----
 language: java
 before_script:
   - git submodule init && git submodule update
-  - ./gradlew setupCIWorkspace
+  - "./gradlew setupCIWorkspace"
 script: script/ci
+before_deploy:
+  - ./gradlew release
+deploy:
+  provider: releases
+  api_key:
+    secure: BJX0tp0LiDKMe+XdZx6xjQYCq3zUB1pESwcpqyg6wROc1EHnbRRd8Axq1Jiis7PWdzVIo5VJA4jVWgfLpS1dot+Eu84X1QdlVqObspcdgEySgHhTQwRGECwA1awnU/GEBmcr53uZ5YGjWfCUWoYRUxJUuuLPrVTT01ahYiWejGyf7nBQ7OAXYr1Ua2N9J1PsTFzpy62VD5STP+I53p6BUwR0yNoP1PH8Q8+fALC2nfsr2AVNuVy0t3MBz//EAnTaYhdZunkJzyPVH4KXzkbC0rSd3XLTdXh8tcW3FFhdC+ME2OUotrVZzmQdIeBnBtfEsLwutseAT0yq7xVjSpOoC+vR6C804fuZ8hx/CTIrTc+4v6chWwajaiP1TWOEKyKBOTz4CUhTxXx1Vqh4ynanzhB8dErsjiiKJEDxmJqUx6gDLDbj9AZInpwDgqrgI1ucvcfmXIo4NcK4myAGqp23emLd/6r4AFLiqVB5WdXUD57Hbwec4bM0RWWIFv7To4gcumZpeWBSiStNrofppmpyaA6xcvCkVE99k40MdyjfjDnfvOYPHK1P//cJZYzPZc6WOHkfAWDSvV88alVObbRknctV+Mfo61eofbkEX0egvqIDVW2klVT7s9zN5eKYNnAjZpq0151Wl/VQ3wVaFdLYtCJl8Ze6sDmnfBd7O/DgfYg=
+  file:
+    - build/distributions/*.zip
+    - build/distributions/*.tgz
+    - build/libs/*.jar
+  file_glob: true
+  on:
+    tag: true
+    repo: aergonaut/LifeAquatic
