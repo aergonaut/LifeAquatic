@@ -120,4 +120,4 @@ distributions {
 
 tasks.distTar.compression = Compression.GZIP
 
-task release(dependsOn: ['clean', 'build', 'distZip', 'distTar'])
+task release(dependsOn: ['build', 'distZip', 'distTar'])
