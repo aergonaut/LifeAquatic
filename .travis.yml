@@ -15,5 +15,5 @@ deploy:
     - build/libs/*.jar
   file_glob: true
   on:
-    tag: true
+    tags: true
     repo: aergonaut/LifeAquatic
