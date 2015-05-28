@@ -1,6 +1,7 @@
 # ![Life Aquatic](src/main/resources/assets/lifeaquatic/logo.png)
 
 [![Build Status](https://travis-ci.org/aergonaut/LifeAquatic.svg?branch=master)](https://travis-ci.org/aergonaut/LifeAquatic)
+[![Latest Release](https://img.shields.io/github/release/aergonaut/LifeAquatic.svg?label=latest release)](https://github.com/aergonaut/LifeAquatic/releases)
 
 **Life Aquatic** is a Minecraft mod that adds various gameplay elements focused 
 around underwater and aquatic play.
