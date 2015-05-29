@@ -39,11 +39,8 @@ $on-laptop:        800px;
     }
 }
 
-
+body {
+  padding-top: 60px;
+}
 
 // Import partials from `sass_dir` (defaults to `_sass`)
-@import
-        "base",
-        "layout",
-        "syntax-highlighting"
-;

@@ -2,28 +2,35 @@
 layout: default
 ---
 
-<div class="home">
+<div class="row">
+  <div class="col-md-12">
+    <h1>The Life Aquatic</h1>
+  </div>
+</div>
 
-  <h1 class="page-heading">Posts</h1>
-
-  <ul>
-  {% for release in site.github.releases %}
-    <li><a href="{{ release.html_url }}">{{ release.name }}</a></li>
-  {% endfor %}
-  </ul>
-
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
+<div class="row">
+  <div class="col-md-12">
+    <h2>Downloads</h2>
+    
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Release</th>
+          <th>Version</th>
+          <th>Minecraft Version</th>
+          <th>Downloads</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for release in site.github.releases %}
+          <tr>
+            <td>{{ release.name }}</td>
+            <td>{{ release.tag }}</td>
+            <td>1.7.10</td>
+            <td><a href="{{ release.html_url }}">Downloads</a></td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
 </div>
