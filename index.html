@@ -6,6 +6,12 @@ layout: default
 
   <h1 class="page-heading">Posts</h1>
 
+  <ul>
+  {% for release in site.github.releases %}
+    <li><a href="{{ release.html_url }}">{{ release.name }}</a></li>
+  {% endfor %}
+  </ul>
+
   <ul class="post-list">
     {% for post in site.posts %}
       <li>
