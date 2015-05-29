@@ -48,7 +48,8 @@ class FeatureGenUnderwater(name: String, worldGen: WorldGenerator, materials: Li
     val x = blockX + random.nextInt(16)
     val z = blockZ + random.nextInt(16)
 
-    canGenerateInBiome(world, x, z, random) && generateOneRound(random, x, z, world)
+    canGenerateInBiome(world, x, z, random) &&
+    generateOneRound(random, x, z, world)
   }
 
   override def generateFeature(random: Random, chunkX: Int, chunkZ: Int, world: World): Boolean = {

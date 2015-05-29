@@ -2,6 +2,7 @@ package com.aergonaut.lifeaquatic
 
 import com.aergonaut.lifeaquatic.block.ModBlocks
 import com.aergonaut.lifeaquatic.common.Proxy
+import com.aergonaut.lifeaquatic.config.ConfigHandler
 import com.aergonaut.lifeaquatic.item.ModItems
 import com.aergonaut.lifeaquatic.recipe.Recipes
 import com.aergonaut.lifeaquatic.util.Logger
@@ -20,6 +21,8 @@ object LifeAquatic {
   @EventHandler
   def preInit(event: FMLPreInitializationEvent): Unit = {
     Logger.info(s"${Constants.Name} pre-initialization starting")
+
+    ConfigHandler.init(event.getSuggestedConfigurationFile)
 
     ModItems.init()
     ModBlocks.init()

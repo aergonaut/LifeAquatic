@@ -2,6 +2,7 @@ package com.aergonaut.lifeaquatic.block
 
 import java.util
 
+import com.aergonaut.lifeaquatic.config.Config
 import com.aergonaut.lifeaquatic.item.ModItems
 import com.aergonaut.lifeaquatic.constants.Names
 import cpw.mods.fml.relauncher.{Side, SideOnly}
@@ -16,7 +17,7 @@ class Oyster extends BlockBase(Names.Blocks.Oyster) {
 
   var iconSide, iconTop: IIcon = _
 
-  val MAX_PEARLS = 5
+  val MAX_PEARLS = Config.World.maxPearlsDropped
 
   override def registerBlockIcons(iIconRegister: IIconRegister): Unit = {
     iconTop = iIconRegister.registerIcon(getUnlocalizedName().split('.').last + ".0")

@@ -2,6 +2,7 @@ package com.aergonaut.lifeaquatic.world.feature
 
 import cofh.lib.util.WeightedRandomBlock
 import cofh.lib.world.biome.BiomeInfo
+import com.aergonaut.lifeaquatic.config.Config
 import com.aergonaut.lifeaquatic.world.WorldGenOysters
 import com.aergonaut.lifeaquatic.world.util.GenRestriction
 import net.minecraft.init.Blocks
@@ -19,5 +20,5 @@ class FeatureGenOysters extends
   addBiome(new BiomeInfo("Ocean"))
   addBiome(new BiomeInfo("Deep Ocean"))
 
-  setRarity(20)
+  setRarity(Config.World.oysterRarity)
 }

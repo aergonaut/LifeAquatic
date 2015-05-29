@@ -50,7 +50,7 @@ abstract class FeatureGenBase(name: String, biomesRestriction: GenRestriction.Re
   override def generateFeature(random: Random, chunkX: Int, chunkZ: Int, world: World, newGen: Boolean): Boolean = {
     (newGen || regen) &&
     canGenerateInDimension(world) &&
-    random.nextInt(rarity) == 0 &&
+    random.nextInt(100) < rarity &&
     generateFeature(random, chunkX, chunkZ, world)
   }
 
