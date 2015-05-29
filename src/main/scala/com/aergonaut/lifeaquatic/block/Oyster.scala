@@ -17,8 +17,6 @@ class Oyster extends BlockBase(Names.Blocks.Oyster) {
 
   var iconSide, iconTop: IIcon = _
 
-  val MAX_PEARLS = Config.World.maxPearlsDropped
-
   override def registerBlockIcons(iIconRegister: IIconRegister): Unit = {
     iconTop = iIconRegister.registerIcon(getUnlocalizedName().split('.').last + ".0")
     iconSide = iIconRegister.registerIcon(getUnlocalizedName().split('.').last + ".1")
@@ -32,9 +30,15 @@ class Oyster extends BlockBase(Names.Blocks.Oyster) {
   }
 
   override def getDrops(world: World, x: Int, y: Int, z: Int, metadata: Int, fortune: Int): util.ArrayList[ItemStack] = {
-    val count = Math.max(world.rand.nextInt(fortune + MAX_PEARLS), MAX_PEARLS)
+    val count = Math.min(world.rand.nextInt(fortune + Oyster.maxPearls), Oyster.maxPearls)
     val array = new util.ArrayList[ItemStack]()
     array.add(new ItemStack(ModItems.Pearl, count))
     array
   }
+}
+
+object Oyster {
+  def rarity: Int = Config.World.oysterRarity
+  def clusterSize: Int = Config.World.oysterClusterSize
+  def maxPearls: Int = Config.World.maxPearlsDropped
 }

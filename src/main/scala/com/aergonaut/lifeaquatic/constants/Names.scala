@@ -20,4 +20,8 @@ object Names {
       final val Linen = "LinenArmor"
     }
   }
+
+  object Features {
+    final val Oysters = s"${Constants.ModID}_oysters"
+  }
 }
