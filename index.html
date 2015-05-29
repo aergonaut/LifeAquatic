@@ -1,122 +1,23 @@
-<!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="UTF-8">
-    <title>The Life Aquatic by aergonaut</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
-  </head>
-  <body>
-    <section class="page-header">
-      <h1 class="project-name">The Life Aquatic</h1>
-      <h2 class="project-tagline">Fun with underwater adventure!</h2>
-      <a href="https://github.com/aergonaut/LifeAquatic" class="btn">View on GitHub</a>
-      <a href="https://github.com/aergonaut/LifeAquatic/zipball/master" class="btn">Download .zip</a>
-      <a href="https://github.com/aergonaut/LifeAquatic/tarball/master" class="btn">Download .tar.gz</a>
-    </section>
+---
+layout: default
+---
 
-    <section class="main-content">
-      <p><a href="https://travis-ci.org/aergonaut/LifeAquatic"><img src="https://travis-ci.org/aergonaut/LifeAquatic.svg?branch=master" alt="Build Status"></a>
-<a href="https://github.com/aergonaut/LifeAquatic/releases"><img src="https://img.shields.io/github/release/aergonaut/LifeAquatic.svg?label=latest%20release" alt="Latest Release"></a></p>
+<div class="home">
 
-<p><strong>Life Aquatic</strong> is a Minecraft mod that adds various gameplay elements focused 
-around underwater and aquatic play.</p>
+  <h1 class="page-heading">Posts</h1>
 
-<p>This is still under heavy development and this is my first foray into mod 
-development. <em>Definitely</em> not ready to be used on a server unless you are
-willing to accept the risks!</p>
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
 
-<p>Features wishlist:</p>
+        <h2>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h2>
+      </li>
+    {% endfor %}
+  </ul>
 
-<ul>
-<li>[ ] underwater villages</li>
-<li>[ ] underwater villagers (merpeople)</li>
-<li>[ ] aquatic passive mobs (whales, seals, electric eels)</li>
-<li>[ ] aquatic hostile mobs (sharks, flesh-eating jellyfish)</li>
-<li>[ ] aquatic bosses (Kraken, Leviathan)</li>
-</ul>
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
 
-<h2>
-<a id="contributing" class="anchor" href="#contributing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Contributing</h2>
-
-<p>This mod is open source! If you have an idea for a feature you would like to
-see, please feel free to submit a pull request!</p>
-
-<ol>
-<li>Fork the repo</li>
-<li>Create a branch</li>
-<li>Push your branch to GitHub</li>
-<li>Open a Pull Request!</li>
-</ol>
-
-<h3>
-<a id="dev-environment-setup" class="anchor" href="#dev-environment-setup" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dev environment setup</h3>
-
-<p>Run the setup script in <code>script/setup</code>. This will initialize the Git submodules,
-download the deobfuscated Minecraft source, and setup IntelliJ project files
-for you.</p>
-
-<p>If you want to use Eclipse, you can run <code>./gradlew eclipse</code> after running the
-setup script to generate the Eclipse project files.</p>
-
-<h4>
-<a id="select-an-mcp-conf-dir-for-the-deobfuscator" class="anchor" href="#select-an-mcp-conf-dir-for-the-deobfuscator" aria-hidden="true"><span class="octicon octicon-link"></span></a>"select an mcp conf dir for the deobfuscator"</h4>
-
-<p>If you see this window, navigate to <code>$HOME/.gradle/caches/minecraft/net/minecraftforge/forge/$FORGE_VERSION/unpacked/conf</code></p>
-
-<p>Depending on the circumstances, you may not be able to select the <code>.gradle</code>
-directory because it is hidden. If that is the case, type the absolute path into
-the path selection box.</p>
-
-<p>Click Select to save the setting. You shouldn't be prompted to select this again.</p>
-
-<p>This is raised by CodeChickenCore, which is the support library for NEI.</p>
-
-<h3>
-<a id="style" class="anchor" href="#style" aria-hidden="true"><span class="octicon octicon-link"></span></a>Style</h3>
-
-<p>Coding style is enforced by <a href="http://www.scalastyle.org/">ScalaStyle</a>. ScalaStyle
-is run against every commit as part of each <a href="https://travis-ci.org/aergonaut/LifeAquatic">build</a>.</p>
-
-<p>To check style yourself, run <code>./gradlew scalaStye</code>.</p>
-
-<h2>
-<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
-
-<p>The MIT License (MIT)</p>
-
-<p>Copyright (c) 2015 Chris Fung</p>
-
-<p>Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:</p>
-
-<p>The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.</p>
-
-<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.</p>
-
-      <footer class="site-footer">
-        <span class="site-footer-owner"><a href="https://github.com/aergonaut/LifeAquatic">The Life Aquatic</a> is maintained by <a href="https://github.com/aergonaut">aergonaut</a>.</span>
-
-        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
-      </footer>
-
-    </section>
-
-  
-  </body>
-</html>
-
+</div>
