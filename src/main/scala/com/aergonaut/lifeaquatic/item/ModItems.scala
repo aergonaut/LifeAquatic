@@ -6,12 +6,13 @@ import cpw.mods.fml.common.registry.GameRegistry
 
 object ModItems {
   final val Pearl: ItemBase = new Pearl
-
+  final val Kelp: ItemBase = new Kelp
   final val LinenHelmet: ItemArmorBase = new LinenHelmet
   final val LinenChest: ItemArmorBase = new LinenChest
 
   def init(): Unit = {
     GameRegistry.registerItem(Pearl, Names.Items.Pearl)
+    GameRegistry.registerItem(Kelp, Names.Items.Kelp)
 
     GameRegistry.registerItem(LinenHelmet, Names.Items.Armor.LinenHelmet)
     GameRegistry.registerItem(LinenChest, Names.Items.Armor.LinenChest)
