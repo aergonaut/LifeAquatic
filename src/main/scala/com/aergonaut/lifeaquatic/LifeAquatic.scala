@@ -1,13 +1,14 @@
 package com.aergonaut.lifeaquatic
 
 import com.aergonaut.lifeaquatic.block.ModBlocks
-import com.aergonaut.lifeaquatic.common.Proxy
+import com.aergonaut.lifeaquatic.common.TProxy
 import com.aergonaut.lifeaquatic.config.ConfigHandler
 import com.aergonaut.lifeaquatic.item.ModItems
 import com.aergonaut.lifeaquatic.recipe.Recipes
 import com.aergonaut.lifeaquatic.util.Logger
 import com.aergonaut.lifeaquatic.constants.Constants
 import com.aergonaut.lifeaquatic.world.ModWorldGen
+import cpw.mods.fml.common.network.NetworkRegistry
 import cpw.mods.fml.common.{SidedProxy, Mod}
 import cpw.mods.fml.common.Mod.EventHandler
 import cpw.mods.fml.common.event.{FMLPostInitializationEvent, FMLInitializationEvent, FMLPreInitializationEvent}
@@ -16,7 +17,7 @@ import cpw.mods.fml.common.event.{FMLPostInitializationEvent, FMLInitializationE
 object LifeAquatic {
 
   @SidedProxy(clientSide = "com.aergonaut.lifeaquatic.client.ClientProxy", serverSide = "com.aergonaut.lifeaquatic.server.ServerProxy")
-  var proxy: Proxy = _
+  var proxy: TProxy = _
 
   @EventHandler
   def preInit(event: FMLPreInitializationEvent): Unit = {
@@ -30,6 +31,8 @@ object LifeAquatic {
 
   @EventHandler
   def init(event: FMLInitializationEvent): Unit = {
+    NetworkRegistry.INSTANCE.registerGuiHandler(this, proxy)
+
     ModWorldGen.init()
     Recipes.init()
   }

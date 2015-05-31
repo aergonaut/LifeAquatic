@@ -13,6 +13,10 @@ object Names {
       final val LinenHelmet = "LinenHelmet"
       final val LinenChest = "LinenChest"
     }
+
+    object Tools {
+      final val Manual = "ToolManual"
+    }
   }
 
   object Materials {
