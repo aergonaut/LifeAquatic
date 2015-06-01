@@ -1,19 +1,21 @@
-package com.aergonaut.lifeaquatic.client.gui.manual
+package com.aergonaut.lib.manual.gui
 
+import com.aergonaut.lib.manual.TManual
 import com.aergonaut.lifeaquatic.client.ClientUtil
-import com.aergonaut.lifeaquatic.constants.Textures
 import net.minecraft.client.Minecraft
 import net.minecraft.client.gui.GuiScreen
 import net.minecraft.util.{EnumChatFormatting, ResourceLocation}
 import org.lwjgl.opengl.GL11
 
-class GuiManual extends GuiScreen {
-  final val guiWidth = 148
-  final val guiHeight = 208
+abstract class TGuiManual extends GuiScreen {
+  val guiWidth: Int
+  val guiHeight: Int
 
   var left, top: Int = _
 
-  final val guiResource = new ResourceLocation(Textures.Gui.Manual)
+  val texture: ResourceLocation
+
+  val manual: TManual
 
   override def initGui(): Unit = {
     left = (width - guiWidth) / 2
@@ -25,11 +27,12 @@ class GuiManual extends GuiScreen {
   override def drawScreen(mx: Int, my: Int, uselessFloat: Float): Unit = {
     GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F)
 
-    Minecraft.getMinecraft.getTextureManager.bindTexture(guiResource)
+    Minecraft.getMinecraft.getTextureManager.bindTexture(texture)
     drawTexturedModalRect(left, top, 0, 0, guiWidth, guiHeight)
 
-    val title = "Undersea Almanac"
-    drawCenteredStringScaled(s"${EnumChatFormatting.BOLD}${title}", left + (guiWidth/2), top + 16, 0x60ACFF, 1, true)
+    val title = manual.title
+    val titleColor = manual.titleColor
+    drawCenteredStringScaled(s"${EnumChatFormatting.BOLD}${title}", left + (guiWidth/2), top + 16, titleColor, 1, true)
 
     super.drawScreen(mx, my, uselessFloat)
   }
@@ -48,6 +51,3 @@ class GuiManual extends GuiScreen {
   }
 }
 
-object GuiManual {
-  final val Instance = new GuiManual
-}

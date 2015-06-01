@@ -10,7 +10,7 @@ import net.minecraft.world.World
 class ToolManual extends ItemBase(Names.Items.Tools.Manual) {
   override def onItemRightClick(stack: ItemStack, world: World, player: EntityPlayer): ItemStack = {
     if (world.isRemote) {
-      player.openGui(LifeAquatic, Guis.Manual, world, player.posX.toInt, player.posY.toInt, player.posZ.toInt)
+      player.openGui(LifeAquatic, Guis.Almanac, world, player.posX.toInt, player.posY.toInt, player.posZ.toInt)
     }
 
     stack
