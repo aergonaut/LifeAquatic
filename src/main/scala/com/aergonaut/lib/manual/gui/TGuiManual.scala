@@ -19,7 +19,7 @@ abstract class TGuiManual extends GuiScreen {
 
   val manual: TManual
 
-  var activeSection: Option[TManualSection] = None
+  protected var activeSection: Option[TManualSection] = None
 
   protected var buttons: Vector[GuiButton] = Vector[GuiButton]()
 
@@ -98,4 +98,12 @@ abstract class TGuiManual extends GuiScreen {
   def addButton(button: GuiButton): Unit = buttons = buttons :+ button
 
   def nextButtonId: Int = buttonList.size
+
+  def setActiveSection(target: TManualSection): Unit = {
+    activeSection = Some(target)
+  }
+
+  def clearActiveSection(): Unit = {
+    activeSection = None
+  }
 }
