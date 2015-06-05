@@ -1,7 +1,14 @@
-item.lifeaquatic:ToolManual.name=Aquatic Almanac
+# items
+item.lifeaquatic:ToolManual.name=Undersea Almanac
 item.lifeaquatic:Pearl.name=Pearl
 item.lifeaquatic:LinenHelmet.name=Zissou's Red Cap
 item.lifeaquatic:LinenChest.name=Linen Shirt
 
+# blocks
 tile.lifeaquatic:PearlBlock.name=Pearl Block
 tile.lifeaquatic:Oyster.name=Nacreous Oyster
+
+
+# almanac
+lifeaquatic.manuals.almanac.title=Undersea Almanac
+lifeaquatic.manuals.almanac.chapters.introduction.title=Introduction

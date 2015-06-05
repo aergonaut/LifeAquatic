@@ -12,11 +12,6 @@ class GuiTextLink(gui: TGuiManual, target: TManualSection, id: Int, x: Int, y: I
   }
 
   override def mousePressed(minecraft: Minecraft, x: Int, y: Int): Boolean = {
-    if (super.mousePressed(minecraft, x, y)) {
-      gui.setActiveSection(target)
-      true
-    } else {
-      false
-    }
+    super.mousePressed(minecraft, x, y) && gui.setActiveSection(target)
   }
 }

@@ -7,7 +7,9 @@ class ManualChapter(theManual: TManual, localizedName: String, pages: Seq[Manual
 
   override val manual: TManual = theManual
 
-  override def renderSection(gui: TGuiManual): Unit = {}
+  override def renderSection(gui: TGuiManual): Unit = {
+    renderTitle(gui)
+  }
 }
 
 object ManualChapter {

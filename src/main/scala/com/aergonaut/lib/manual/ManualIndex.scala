@@ -8,7 +8,9 @@ class ManualIndex(theManual: TManual, localizedName: String, sections: Seq[TManu
   override val manual: TManual = theManual
 
   override def renderSection(gui: TGuiManual): Unit = {
-    val fontHeight = gui.font.FONT_HEIGHT
+    val fontHeight = gui.fontHeight
+
+    renderTitle(gui)
 
     sections.foreach(section => {
       val idx = sections indexOf section

@@ -3,7 +3,7 @@ package com.aergonaut.lib.manual.gui
 import com.aergonaut.lib.manual.{TManual, TManualSection}
 import net.minecraft.client.Minecraft
 import net.minecraft.client.gui.{FontRenderer, GuiButton, GuiScreen}
-import net.minecraft.util.{EnumChatFormatting, ResourceLocation}
+import net.minecraft.util.ResourceLocation
 import net.minecraftforge.client.event.GuiScreenEvent.ActionPerformedEvent
 import net.minecraftforge.common.MinecraftForge
 import org.lwjgl.opengl.GL11
@@ -19,7 +19,7 @@ abstract class TGuiManual extends GuiScreen {
 
   val manual: TManual
 
-  protected var activeSection: Option[TManualSection] = None
+  protected var activeSection: TManualSection = _
 
   protected var buttons: Vector[GuiButton] = Vector[GuiButton]()
 
@@ -37,22 +37,7 @@ abstract class TGuiManual extends GuiScreen {
     Minecraft.getMinecraft.getTextureManager.bindTexture(texture)
     drawTexturedModalRect(left, top, 0, 0, guiWidth, guiHeight)
 
-    // determine how to render the active section
-    activeSection match {
-      // if there is an active section, use its render method
-      case Some(section) => section.renderSection(this)
-
-      // in the case there is no active page, we render the "home page"
-      case None => {
-        // render the book's title
-        val title = manual.title
-        val titleColor = manual.titleColor
-        drawCenteredStringScaled(s"${EnumChatFormatting.BOLD}${title}", left + (guiWidth/2), top + 16, titleColor, 1, true)
-
-        // now render the index
-        manual.index.renderSection(this)
-      }
-    }
+    activeSection.renderSection(this)
 
     // handling button drawing on our own...
     buttons.foreach(_.drawButton(mc, mx, my))
@@ -99,11 +84,16 @@ abstract class TGuiManual extends GuiScreen {
 
   def nextButtonId: Int = buttonList.size
 
-  def setActiveSection(target: TManualSection): Unit = {
-    activeSection = Some(target)
+  def setActiveSection(target: TManualSection): Boolean = {
+    activeSection = target
+    true
   }
 
   def clearActiveSection(): Unit = {
-    activeSection = None
+    activeSection = manual.index
+  }
+
+  override def actionPerformed(button: GuiButton): Unit = {
+    initGui()
   }
 }

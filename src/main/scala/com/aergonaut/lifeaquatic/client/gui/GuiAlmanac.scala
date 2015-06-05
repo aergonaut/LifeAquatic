@@ -10,6 +10,8 @@ class GuiAlmanac extends GuiManualBase {
   override val texture: ResourceLocation = new ResourceLocation(Textures.Gui.Manual)
 
   override val manual: Almanac = new Almanac
+
+  activeSection = manual.index
 }
 
 object GuiAlmanac {
