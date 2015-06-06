@@ -12,8 +12,8 @@ abstract class TGuiManual extends GuiScreen {
   val guiWidth: Int
   val guiHeight: Int
 
-  var left: Int = _
-  var top: Int = _
+  var left: Int = 0
+  var top: Int = 0
 
   val texture: ResourceLocation
 
