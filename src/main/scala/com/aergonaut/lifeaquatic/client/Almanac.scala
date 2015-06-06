@@ -12,6 +12,9 @@ class Almanac extends ManualBase {
   override val hoverColor: Int = 0x60ACFF
 
   override val index: ManualIndex = ManualIndex(this, title, Array(
-    ManualChapter(this, formatText("chapters.introduction.title"))
+    ManualChapter(this, formatText("chapters.introduction.title"), Array(
+      ManualPage(formatText("chapters.introduction.page0")),
+      ManualPage(formatText("chapters.introduction.page1"))
+    ))
   ))
 }
