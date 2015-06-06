@@ -25,6 +25,24 @@ class ManualChapter(theManual: TManual, localizedName: String, pages: Seq[Manual
       gui.addButton(GuiPagination.Forward(gui, this, gui.nextButtonId, gui.left + gui.guiWidth - 21, gui.top + gui.guiHeight + 2))
     }
   }
+
+  def nextPage(): Boolean = {
+    if (activePage < pages.size - 1) {
+      activePage += 1
+      true
+    } else {
+      false
+    }
+  }
+
+  def previousPage(): Boolean = {
+    if (activePage > 0) {
+      activePage -= 1
+      true
+    } else {
+      false
+    }
+  }
 }
 
 object ManualChapter {

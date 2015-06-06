@@ -21,6 +21,10 @@ object GuiPagination {
     def apply(gui: TGuiManual, controlledChapter: ManualChapter, id: Int, x: Int, y: Int): GuiPagination =
       new GuiPagination(gui, controlledChapter, id, x, y) {
         override val xOffset: Int = 0
+
+        override def mousePressed(minecraft: Minecraft, mx: Int, my: Int): Boolean = {
+          super.mousePressed(minecraft, mx, my) && controlledChapter.previousPage()
+        }
       }
   }
 
@@ -28,6 +32,10 @@ object GuiPagination {
     def apply(gui: TGuiManual, controlledChapter: ManualChapter, id: Int, x: Int, y: Int): GuiPagination =
       new GuiPagination(gui, controlledChapter, id, x, y) {
         override val xOffset: Int = 21
+
+        override def mousePressed(minecraft: Minecraft, mx: Int, my: Int): Boolean = {
+          super.mousePressed(minecraft, mx, my) && controlledChapter.nextPage()
+        }
       }
   }
 }
