@@ -19,7 +19,7 @@ abstract class GuiPagination(gui: TGuiManual, controlledChapter: ManualChapter, 
 }
 
 object GuiPagination {
-  object Back {
+  object Previous {
     def apply(gui: TGuiManual, controlledChapter: ManualChapter, id: Int, x: Int, y: Int): GuiPagination =
       new GuiPagination(gui, controlledChapter, id, x, y) {
         override val xOffset: Int = 0

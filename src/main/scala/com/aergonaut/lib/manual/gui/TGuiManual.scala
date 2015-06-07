@@ -8,6 +8,8 @@ import net.minecraftforge.client.event.GuiScreenEvent.ActionPerformedEvent
 import net.minecraftforge.common.MinecraftForge
 import org.lwjgl.opengl.GL11
 
+import scala.collection.mutable
+
 abstract class TGuiManual extends GuiScreen {
   val guiWidth: Int
   val guiHeight: Int
@@ -23,11 +25,17 @@ abstract class TGuiManual extends GuiScreen {
 
   protected var buttons: Vector[GuiButton] = Vector[GuiButton]()
 
+  protected val history: mutable.Stack[TManualSection] = mutable.Stack()
+
   override def initGui(): Unit = {
     left = (width - guiWidth) / 2
     top = (height - guiHeight) / 2
 
+    buttonList.clear()
     buttons = Vector[GuiButton]()
+
+    // add the buttons from the activeSection
+    activeSection.addButtons(this)
   }
 
   override def drawScreen(mx: Int, my: Int, uselessFloat: Float): Unit = {
@@ -41,7 +49,6 @@ abstract class TGuiManual extends GuiScreen {
 
     // handling button drawing on our own...
     buttons.foreach(_.drawButton(mc, mx, my))
-
     super.drawScreen(mx, my, uselessFloat)
   }
 
@@ -80,11 +87,14 @@ abstract class TGuiManual extends GuiScreen {
 
   def fontHeight: Int = font.FONT_HEIGHT
 
-  def addButton(button: GuiButton): Unit = buttons = buttons :+ button
+  def addButton(button: GuiButton): Unit = {
+    buttons = buttons :+ button
+  }
 
   def nextButtonId: Int = buttonList.size
 
   def setActiveSection(target: TManualSection): Boolean = {
+    history.push(activeSection)
     activeSection = target
     true
   }
@@ -96,4 +106,11 @@ abstract class TGuiManual extends GuiScreen {
   override def actionPerformed(button: GuiButton): Unit = {
     initGui()
   }
+
+  def navigateBack(): Boolean = {
+    activeSection = history.pop()
+    true
+  }
+
+  override def doesGuiPauseGame(): Boolean = false
 }

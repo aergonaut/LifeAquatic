@@ -2,10 +2,12 @@ package com.aergonaut.lib.manual
 
 import com.aergonaut.lib.manual.gui.{GuiPagination, TGuiManual}
 
-class ManualChapter(theManual: TManual, localizedName: String, pages: Seq[ManualPage]) extends TManualSection {
+class ManualChapter(theManual: TManual, theParent: Option[TManualSection], localizedName: String, pages: Seq[ManualPage]) extends TManualSection {
   override val name: String = localizedName
 
   override val manual: TManual = theManual
+
+  override val parent: Option[TManualSection] = theParent
 
   private var activePage = 0
 
@@ -19,11 +21,15 @@ class ManualChapter(theManual: TManual, localizedName: String, pages: Seq[Manual
     val yOffset = if (activePage == 0) 3 * fontHeight else 16
 
     gui.font.drawSplitString(pages(activePage).text, 10 + gui.left, yOffset + gui.top, 120, manual.textColor)
+  }
 
+  override def addButtons(gui: TGuiManual): Unit = {
     if (pages.size > 1) {
-      gui.addButton(GuiPagination.Back(gui, this, gui.nextButtonId, gui.left + 0, gui.top + gui.guiHeight + 2))
+      // prev and next
+      gui.addButton(GuiPagination.Previous(gui, this, gui.nextButtonId, gui.left + 0, gui.top + gui.guiHeight + 2))
       gui.addButton(GuiPagination.Forward(gui, this, gui.nextButtonId, gui.left + gui.guiWidth - 21, gui.top + gui.guiHeight + 2))
     }
+    super.addButtons(gui)
   }
 
   def nextPage(): Boolean = {
@@ -46,7 +52,7 @@ class ManualChapter(theManual: TManual, localizedName: String, pages: Seq[Manual
 }
 
 object ManualChapter {
-  def apply(theManual: TManual, localizedName: String, pages: Seq[ManualPage]): ManualChapter = new ManualChapter(theManual, localizedName, pages)
+  def apply(theManual: TManual, parent: Option[TManualSection], localizedName: String, pages: Seq[ManualPage]): ManualChapter = new ManualChapter(theManual, parent, localizedName, pages)
 
-  def apply(theManual: TManual, localizedName: String): ManualChapter = apply(theManual, localizedName, Array[ManualPage]())
+  def apply(theManual: TManual, parent: Option[TManualSection], localizedName: String): ManualChapter = apply(theManual, parent, localizedName, Array[ManualPage]())
 }
