@@ -4,6 +4,10 @@ object Names {
   object Blocks {
     final val PearlBlock = "PearlBlock"
     final val Oyster = "Oyster"
+
+    final val CopperBlock = "CopperBlock"
+    final val TinBlock = "TinBlock"
+    final val NickelBlock = "NickelBlock"
   }
 
   object Ore {

@@ -8,6 +8,10 @@ item.lifeaquatic:LinenChest.name=Linen Shirt
 tile.lifeaquatic:PearlBlock.name=Pearl Block
 tile.lifeaquatic:Oyster.name=Nacreous Oyster
 
+tile.lifeaquatic:CopperBlock.name=Copper Block
+tile.lifeaquatic:TinBlock.name=Tin Block
+tile.lifeaquatic:NickelBlock.name=Nickel Block
+
 # ores
 tile.lifeaquatic:CopperOre.name=Copper Ore
 tile.lifeaquatic:TinOre.name=Tin Ore

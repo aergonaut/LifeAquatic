@@ -14,6 +14,10 @@ object ModBlocks extends TInitializer {
   final val TinOre: BlockBase = new TinOre
   final val NickelOre: BlockBase = new NickelOre
 
+  final val CopperBlock: BlockBase = new CopperBlock
+  final val TinBlock: BlockBase = new TinBlock
+  final val NickelBlock: BlockBase = new NickelBlock
+
   override def preInit(): Boolean = {
     GameRegistry.registerBlock(PearlBlock, Names.Blocks.PearlBlock)
     GameRegistry.registerBlock(Oyster, Names.Blocks.Oyster)
@@ -21,6 +25,10 @@ object ModBlocks extends TInitializer {
     GameRegistry.registerBlock(CopperOre, Names.Ore.Copper)
     GameRegistry.registerBlock(TinOre, Names.Ore.Tin)
     GameRegistry.registerBlock(NickelOre, Names.Ore.Nickel)
+
+    GameRegistry.registerBlock(CopperBlock, Names.Blocks.CopperBlock)
+    GameRegistry.registerBlock(TinBlock, Names.Blocks.TinBlock)
+    GameRegistry.registerBlock(NickelBlock, Names.Blocks.NickelBlock)
 
     ItemHelper.registerWithHandlers("oreCopper", new ItemStack(CopperOre))
     ItemHelper.registerWithHandlers("oreTin", new ItemStack(TinOre))
