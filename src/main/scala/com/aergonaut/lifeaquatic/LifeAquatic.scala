@@ -1,5 +1,6 @@
 package com.aergonaut.lifeaquatic
 
+import cofh.api.core.IInitializer
 import com.aergonaut.lifeaquatic.block.ModBlocks
 import com.aergonaut.lifeaquatic.common.TProxy
 import com.aergonaut.lifeaquatic.config.ConfigHandler
@@ -15,6 +16,7 @@ import cpw.mods.fml.common.event.{FMLPostInitializationEvent, FMLInitializationE
 
 @Mod(name = Constants.Name, version = Constants.Version, modid = Constants.ModID, modLanguage = "scala")
 object LifeAquatic {
+  private final val initializers: Vector[IInitializer] = Vector(ModItems, ModBlocks, ModWorldGen, Recipes)
 
   @SidedProxy(clientSide = "com.aergonaut.lifeaquatic.client.ClientProxy", serverSide = "com.aergonaut.lifeaquatic.server.ServerProxy")
   var proxy: TProxy = _
@@ -25,20 +27,20 @@ object LifeAquatic {
 
     ConfigHandler.init(event.getSuggestedConfigurationFile)
 
-    ModItems.init()
-    ModBlocks.init()
+    initializers.foreach(_.preInit())
   }
 
   @EventHandler
   def init(event: FMLInitializationEvent): Unit = {
     NetworkRegistry.INSTANCE.registerGuiHandler(this, proxy)
 
-    ModWorldGen.init()
-    Recipes.init()
+    initializers.foreach(_.initialize())
   }
 
   @EventHandler
   def postInit(event: FMLPostInitializationEvent): Unit = {
+    initializers.foreach(_.postInit())
+
     Logger.info(s"${Constants.Name} has successfully loaded.")
   }
 }

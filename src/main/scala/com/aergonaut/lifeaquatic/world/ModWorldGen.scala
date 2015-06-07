@@ -3,6 +3,7 @@ package com.aergonaut.lifeaquatic.world
 import java.util.Random
 
 import cofh.api.world.{IFeatureGenerator, IFeatureHandler}
+import com.aergonaut.lib.core.TInitializer
 import com.aergonaut.lifeaquatic.world.feature.FeatureGenOysters
 import cpw.mods.fml.common.IWorldGenerator
 import cpw.mods.fml.common.registry.GameRegistry
@@ -32,8 +33,10 @@ class ModWorldGen extends IWorldGenerator with IFeatureHandler {
   }
 }
 
-object ModWorldGen {
-  def init(): Unit = {
+object ModWorldGen extends TInitializer {
+  override def initialize(): Boolean = {
     GameRegistry.registerWorldGenerator(new ModWorldGen, 0)
+
+    true
   }
 }

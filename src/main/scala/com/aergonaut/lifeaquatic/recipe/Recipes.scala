@@ -1,12 +1,13 @@
 package com.aergonaut.lifeaquatic.recipe
 
+import com.aergonaut.lib.core.TInitializer
 import com.aergonaut.lifeaquatic.block.ModBlocks
 import com.aergonaut.lifeaquatic.item.ModItems
 import cpw.mods.fml.common.registry.GameRegistry
 import net.minecraft.init.{Blocks, Items}
 import net.minecraft.item.ItemStack
 
-object Recipes {
+object Recipes extends TInitializer {
 
   def initShapelessRecipes(): Unit = {
     GameRegistry.addShapelessRecipe(new ItemStack(ModItems.ToolManual),
@@ -48,9 +49,11 @@ object Recipes {
     )
   }
 
-  def init(): Unit = {
+  override def initialize(): Boolean = {
     initShapedRecipes()
 
     initShapelessRecipes()
+
+    true
   }
 }
