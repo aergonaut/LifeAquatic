@@ -11,6 +11,7 @@ tile.lifeaquatic:Oyster.name=Nacreous Oyster
 # ores
 tile.lifeaquatic:CopperOre.name=Copper Ore
 tile.lifeaquatic:TinOre.name=Tin Ore
+tile.lifeaquatic:NickelOre.name=Nickel Ore
 
 # almanac
 lifeaquatic.manuals.almanac.title=Undersea Almanac

@@ -9,6 +9,7 @@ object Names {
   object Ore {
     final val Copper = "CopperOre"
     final val Tin = "TinOre"
+    final val Nickel = "NickelOre"
   }
 
   object Items {
