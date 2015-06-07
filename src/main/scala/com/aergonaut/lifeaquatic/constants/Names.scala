@@ -6,6 +6,11 @@ object Names {
     final val Oyster = "Oyster"
   }
 
+  object Ore {
+    final val Copper = "CopperOre"
+    final val Tin = "TinOre"
+  }
+
   object Items {
     final val Pearl = "Pearl"
 
