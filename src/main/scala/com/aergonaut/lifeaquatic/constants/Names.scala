@@ -27,6 +27,12 @@ object Names {
     object Tools {
       final val Manual = "ToolManual"
     }
+
+    object Ingots {
+      final val Copper = "CopperIngot"
+      final val Tin = "TinIngot"
+      final val Nickel = "NickelIngot"
+    }
   }
 
   object Materials {
