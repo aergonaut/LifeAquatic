@@ -15,6 +15,12 @@ class Almanac extends ManualBase {
     ManualChapter(this, Some(index), formatText("chapters.introduction.title"), Array(
       ManualPage(formatText("chapters.introduction.page0")),
       ManualPage(formatText("chapters.introduction.page1"))
+    )),
+    ManualChapter(this, Some(index), formatText("chapters.ores.title"), Array(
+      ManualPage(formatText("chapters.ores.page0")),
+      ManualPage(formatText("chapters.ores.page1")),
+      ManualPage(formatText("chapters.ores.page2")),
+      ManualPage(formatText("chapters.ores.page3"))
     ))
   ))
 }
