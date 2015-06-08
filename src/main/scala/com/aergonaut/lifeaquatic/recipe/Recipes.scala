@@ -5,6 +5,7 @@ import com.aergonaut.lifeaquatic.block.ModBlocks
 import com.aergonaut.lifeaquatic.item.ModItems
 import cpw.mods.fml.common.registry.GameRegistry
 import net.minecraft.init.{Blocks, Items}
+import net.minecraft.init.Items
 import net.minecraft.item.ItemStack
 
 object Recipes extends TInitializer {
@@ -25,13 +26,35 @@ object Recipes extends TInitializer {
       char2Character('p'), new ItemStack(ModItems.Pearl)
     )
 
-    // face mask
+    // swim trunk - face mask
     GameRegistry.addRecipe(new ItemStack(ModItems.SwimTrunkFaceMask),
-      "rrr",
-      "rgr",
-      "rrr",
-      char2Character('r'), new ItemStack(Blocks.wool),
-      char2Character('g'), new ItemStack(Blocks.glass)
+      "lll",
+      "lgl",
+      "lll",
+      char2Character('l'), new ItemStack(Items.leather),
+      char2Character('g'), new ItemStack(Blocks.glass_pane)
+    )
+
+    // swim trunk - fins
+    GameRegistry.addRecipe(new ItemStack(ModItems.SwimTrunkFins),
+      "l l",
+      "l l",
+      "l l",
+      char2Character('l'), new ItemStack(Items.leather)
+    )
+
+    // swim trunk - fins
+    GameRegistry.addRecipe(new ItemStack(ModItems.SwimTrunkShorts),
+      "lll",
+      "l l",
+      "   ",
+      char2Character('l'), new ItemStack(Items.leather)
+    )
+    GameRegistry.addRecipe(new ItemStack(ModItems.SwimTrunkShorts),
+      "   ",
+      "lll",
+      "l l",
+      char2Character('l'), new ItemStack(Items.leather)
     )
 
     // linen helmet

@@ -39,6 +39,8 @@ object Names {
 
     object Armor {
       final val SwimTrunkFaceMask = "SwimTrunkFaceMask"
+      final val SwimTrunkFins = "SwimTrunkFins"
+      final val SwimTrunkShorts = "SwimTrunkShorts"
       final val LinenHelmet = "LinenHelmet"
       final val LinenChest = "LinenChest"
     }
