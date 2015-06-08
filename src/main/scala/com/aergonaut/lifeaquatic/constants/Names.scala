@@ -2,24 +2,39 @@ package com.aergonaut.lifeaquatic.constants
 
 object Names {
   object Blocks {
-    final val PearlBlock = "PearlBlock"
     final val Oyster = "Oyster"
 
-    final val CopperBlock = "CopperBlock"
-    final val TinBlock = "TinBlock"
-    final val NickelBlock = "NickelBlock"
-    final val BronzeBlock = "BronzeBlock"
-    final val BrassBlock = "BrassBlock"
-  }
+    object Storage {
+      final val Pearl = "storage.pearl"
 
-  object Ore {
-    final val Copper = "CopperOre"
-    final val Tin = "TinOre"
-    final val Nickel = "NickelOre"
+      final val Copper = "storage.copper"
+      final val Tin = "storage.tin"
+      final val Nickel = "storage.nickel"
+      final val Bronze = "storage.bronze"
+      final val Brass = "storage.brass"
+    }
+
+    object Ore {
+      final val Copper = "ore.copper"
+      final val Tin = "ore.tin"
+      final val Nickel = "ore.nickel"
+    }
   }
 
   object Items {
+    object Material {
+      object Armor {
+        final val Linen = "LinenArmor"
+      }
 
+      final val Pearl = "material.pearl"
+
+      final val IngotCopper = "material.ingotCopper"
+      final val IngotTin = "material.ingotTin"
+      final val IngotNickel = "material.ingotNickel"
+      final val IngotBronze = "material.ingotBronze"
+      final val IngotBrass = "material.ingotBrass"
+    }
 
     object Armor {
       final val LinenHelmet = "LinenHelmet"
@@ -29,20 +44,6 @@ object Names {
     object Tools {
       final val Almanac = "ItemAlmanac"
     }
-  }
-
-  object Material {
-    object Armor {
-      final val Linen = "LinenArmor"
-    }
-
-    final val Pearl = "material.pearl"
-
-    final val IngotCopper = "material.ingotCopper"
-    final val IngotTin = "material.ingotTin"
-    final val IngotNickel = "material.ingotNickel"
-    final val IngotBronze = "material.ingotBronze"
-    final val IngotBrass = "material.ingotBrass"
   }
 
   object Features {

@@ -2,6 +2,8 @@ package com.aergonaut.lifeaquatic.block
 
 import cofh.lib.util.helpers.ItemHelper
 import com.aergonaut.lib.core.TInitializer
+import com.aergonaut.lifeaquatic.block.ore.{CopperOre, NickelOre, TinOre}
+import com.aergonaut.lifeaquatic.block.storage._
 import com.aergonaut.lifeaquatic.constants.Names
 import com.aergonaut.lifeaquatic.item.ModItems
 import cpw.mods.fml.common.registry.GameRegistry
@@ -21,18 +23,18 @@ object ModBlocks extends TInitializer {
   final val BrassBlock: BlockBase = new BrassBlock
 
   override def preInit(): Boolean = {
-    GameRegistry.registerBlock(PearlBlock, Names.Blocks.PearlBlock)
+    GameRegistry.registerBlock(PearlBlock, Names.Blocks.Storage.Pearl)
     GameRegistry.registerBlock(Oyster, Names.Blocks.Oyster)
 
-    GameRegistry.registerBlock(CopperOre, Names.Ore.Copper)
-    GameRegistry.registerBlock(TinOre, Names.Ore.Tin)
-    GameRegistry.registerBlock(NickelOre, Names.Ore.Nickel)
+    GameRegistry.registerBlock(CopperOre, Names.Blocks.Ore.Copper)
+    GameRegistry.registerBlock(TinOre, Names.Blocks.Ore.Tin)
+    GameRegistry.registerBlock(NickelOre, Names.Blocks.Ore.Nickel)
 
-    GameRegistry.registerBlock(CopperBlock, Names.Blocks.CopperBlock)
-    GameRegistry.registerBlock(TinBlock, Names.Blocks.TinBlock)
-    GameRegistry.registerBlock(NickelBlock, Names.Blocks.NickelBlock)
-    GameRegistry.registerBlock(BronzeBlock, Names.Blocks.BronzeBlock)
-    GameRegistry.registerBlock(BrassBlock, Names.Blocks.BrassBlock)
+    GameRegistry.registerBlock(CopperBlock, Names.Blocks.Storage.Copper)
+    GameRegistry.registerBlock(TinBlock, Names.Blocks.Storage.Tin)
+    GameRegistry.registerBlock(NickelBlock, Names.Blocks.Storage.Nickel)
+    GameRegistry.registerBlock(BronzeBlock, Names.Blocks.Storage.Bronze)
+    GameRegistry.registerBlock(BrassBlock, Names.Blocks.Storage.Brass)
 
     ItemHelper.registerWithHandlers("oreCopper", ItemHelper.stack(CopperOre))
     ItemHelper.registerWithHandlers("oreTin", ItemHelper.stack(TinOre))

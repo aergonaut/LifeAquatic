@@ -13,19 +13,20 @@ item.lifeaquatic:material.ingotBronze.name=Bronze Ingot
 item.lifeaquatic:material.ingotBrass.name=Brass Ingot
 
 # blocks
-tile.lifeaquatic:PearlBlock.name=Pearl Block
 tile.lifeaquatic:Oyster.name=Nacreous Oyster
 
-tile.lifeaquatic:CopperBlock.name=Copper Block
-tile.lifeaquatic:TinBlock.name=Tin Block
-tile.lifeaquatic:NickelBlock.name=Nickel Block
-tile.lifeaquatic:BronzeBlock.name=Bronze Block
-tile.lifeaquatic:BrassBlock.name=Brass Block
+tile.lifeaquatic:storage.pearl.name=Pearl Block
+
+tile.lifeaquatic:storage.copper.name=Copper Block
+tile.lifeaquatic:storage.tin.name=Tin Block
+tile.lifeaquatic:storage.nickel.name=Nickel Block
+tile.lifeaquatic:storage.bronze.name=Bronze Block
+tile.lifeaquatic:storage.brass.name=Brass Block
 
 # ores
-tile.lifeaquatic:CopperOre.name=Copper Ore
-tile.lifeaquatic:TinOre.name=Tin Ore
-tile.lifeaquatic:NickelOre.name=Nickel Ore
+tile.lifeaquatic:ore.copper.name=Copper Ore
+tile.lifeaquatic:ore.tin.name=Tin Ore
+tile.lifeaquatic:ore.nickel.name=Nickel Ore
 
 # almanac
 lifeaquatic.manuals.almanac.title=Undersea Almanac
