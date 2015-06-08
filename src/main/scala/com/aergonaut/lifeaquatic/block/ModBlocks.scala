@@ -3,6 +3,7 @@ package com.aergonaut.lifeaquatic.block
 import cofh.lib.util.helpers.ItemHelper
 import com.aergonaut.lib.core.TInitializer
 import com.aergonaut.lifeaquatic.constants.Names
+import com.aergonaut.lifeaquatic.item.ModItems
 import cpw.mods.fml.common.registry.GameRegistry
 import net.minecraft.item.ItemStack
 
@@ -33,6 +34,14 @@ object ModBlocks extends TInitializer {
     ItemHelper.registerWithHandlers("oreCopper", new ItemStack(CopperOre))
     ItemHelper.registerWithHandlers("oreTin", new ItemStack(TinOre))
     ItemHelper.registerWithHandlers("oreNickel", new ItemStack(NickelOre))
+
+    true
+  }
+
+  override def postInit(): Boolean = {
+    ItemHelper.addSmelting(ItemHelper.stack(ModItems.CopperIngot), ItemHelper.stack(CopperOre), 0.6F)
+    ItemHelper.addSmelting(ItemHelper.stack(ModItems.TinIngot), ItemHelper.stack(TinOre), 0.7F)
+    ItemHelper.addSmelting(ItemHelper.stack(ModItems.NickelIngot), ItemHelper.stack(NickelOre), 1.0F)
 
     true
   }
