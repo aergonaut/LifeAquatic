@@ -19,7 +19,7 @@ object Names {
   }
 
   object Items {
-    final val Pearl = "Pearl"
+
 
     object Armor {
       final val LinenHelmet = "LinenHelmet"
@@ -27,22 +27,22 @@ object Names {
     }
 
     object Tools {
-      final val Manual = "ToolManual"
-    }
-
-    object Ingots {
-      final val Copper = "CopperIngot"
-      final val Tin = "TinIngot"
-      final val Nickel = "NickelIngot"
-      final val Bronze = "BronzeIngot"
-      final val Brass = "BrassIngot"
+      final val Almanac = "ItemAlmanac"
     }
   }
 
-  object Materials {
+  object Material {
     object Armor {
       final val Linen = "LinenArmor"
     }
+
+    final val Pearl = "material.pearl"
+
+    final val IngotCopper = "material.ingotCopper"
+    final val IngotTin = "material.ingotTin"
+    final val IngotNickel = "material.ingotNickel"
+    final val IngotBronze = "material.ingotBronze"
+    final val IngotBrass = "material.ingotBrass"
   }
 
   object Features {

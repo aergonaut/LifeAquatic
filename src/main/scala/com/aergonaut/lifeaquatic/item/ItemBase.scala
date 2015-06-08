@@ -6,7 +6,7 @@ import cpw.mods.fml.relauncher.{Side, SideOnly}
 import net.minecraft.client.renderer.texture.IIconRegister
 import net.minecraft.item.{Item, ItemStack}
 
-class ItemBase(name: String) extends Item {
+abstract class ItemBase(name: String) extends Item {
   setUnlocalizedName(name)
   setCreativeTab(ModCreativeTabs.LifeAquaticTab)
 
@@ -16,8 +16,9 @@ class ItemBase(name: String) extends Item {
 
   @SideOnly(Side.CLIENT)
   override def registerIcons(iconRegister: IIconRegister): Unit = {
-    itemIcon = iconRegister.registerIcon(getUnlocalizedName().split('.').last)
+    val texture = name.replaceAll("\\.", "/")
+    itemIcon = iconRegister.registerIcon(s"${Textures.ResourcePrefix}${texture}")
   }
 
-  protected def getUnwrappedUnlocalizedName(unlocalizedName: String) = unlocalizedName.split('.').last
+  protected def getUnwrappedUnlocalizedName(unlocalizedName: String) = unlocalizedName.split("\\.", 2).last
 }
