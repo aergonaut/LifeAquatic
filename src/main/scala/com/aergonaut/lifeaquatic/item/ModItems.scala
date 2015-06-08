@@ -24,18 +24,18 @@ object ModItems extends TInitializer {
   final val BrassIngot: ItemBase = new BrassIngot
 
   override def preInit(): Boolean = {
-    GameRegistry.registerItem(ToolManual, Names.Items.Tools.Almanac)
+    GameRegistry.registerItem(ToolManual, Names.Items.Tool.Almanac)
 
-    GameRegistry.registerItem(Pearl, Names.Material.Pearl)
+    GameRegistry.registerItem(Pearl, Names.Items.Material.Pearl)
 
     GameRegistry.registerItem(LinenHelmet, Names.Items.Armor.LinenHelmet)
     GameRegistry.registerItem(LinenChest, Names.Items.Armor.LinenChest)
 
-    GameRegistry.registerItem(CopperIngot, Names.Material.IngotCopper)
-    GameRegistry.registerItem(TinIngot, Names.Material.IngotTin)
-    GameRegistry.registerItem(NickelIngot, Names.Material.IngotNickel)
-    GameRegistry.registerItem(BronzeIngot, Names.Material.IngotBronze)
-    GameRegistry.registerItem(BrassIngot, Names.Material.IngotBrass)
+    GameRegistry.registerItem(CopperIngot, Names.Items.Material.IngotCopper)
+    GameRegistry.registerItem(TinIngot, Names.Items.Material.IngotTin)
+    GameRegistry.registerItem(NickelIngot, Names.Items.Material.IngotNickel)
+    GameRegistry.registerItem(BronzeIngot, Names.Items.Material.IngotBronze)
+    GameRegistry.registerItem(BrassIngot, Names.Items.Material.IngotBrass)
 
     OreDictionary.registerOre("ingotCopper", ItemHelper.stack(CopperIngot))
     OreDictionary.registerOre("ingotTin", ItemHelper.stack(TinIngot))

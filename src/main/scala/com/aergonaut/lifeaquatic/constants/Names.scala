@@ -41,7 +41,7 @@ object Names {
       final val LinenChest = "LinenChest"
     }
 
-    object Tools {
+    object Tool {
       final val Almanac = "ItemAlmanac"
     }
   }
