@@ -6,6 +6,7 @@ import com.aergonaut.lifeaquatic.constants.Names
 import com.aergonaut.lifeaquatic.item.armor.{ItemArmorBase, LinenChest, LinenHelmet}
 import com.aergonaut.lifeaquatic.item.manual.ItemAlmanac
 import com.aergonaut.lifeaquatic.item.material._
+import com.aergonaut.lifeaquatic.item.tool.Wrench
 import cpw.mods.fml.common.registry.GameRegistry
 import net.minecraftforge.oredict.OreDictionary
 
@@ -23,8 +24,12 @@ object ModItems extends TInitializer {
   final val BronzeIngot: ItemBase = new BronzeIngot
   final val BrassIngot: ItemBase = new BrassIngot
 
+  final val Wrench: ItemBase = new Wrench
+
   override def preInit(): Boolean = {
     GameRegistry.registerItem(ToolManual, Names.Items.Tool.Almanac)
+
+    GameRegistry.registerItem(Wrench, Names.Items.Tool.Wrench)
 
     GameRegistry.registerItem(Pearl, Names.Items.Material.Pearl)
 
@@ -42,6 +47,19 @@ object ModItems extends TInitializer {
     OreDictionary.registerOre("ingotNickel", ItemHelper.stack(NickelIngot))
     OreDictionary.registerOre("ingotBronze", ItemHelper.stack(BronzeIngot))
     OreDictionary.registerOre("ingotBrass", ItemHelper.stack(BrassIngot))
+
+    true
+  }
+
+  override def initialize(): Boolean = {
+    ItemHelper.addRecipe(ItemHelper.ShapedRecipe(ItemHelper.stack(Wrench),
+      " i ",
+      " ti",
+      "p  ",
+      char2Character('i'), "ingotIron",
+      char2Character('t'), "ingotTin",
+      char2Character('p'), ItemHelper.stack(Pearl)
+    ))
 
     true
   }

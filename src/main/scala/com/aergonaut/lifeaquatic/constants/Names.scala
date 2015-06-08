@@ -43,6 +43,7 @@ object Names {
 
     object Tool {
       final val Almanac = "ItemAlmanac"
+      final val Wrench = "tool.wrench"
     }
   }
 

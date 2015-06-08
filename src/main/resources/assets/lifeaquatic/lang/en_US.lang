@@ -12,6 +12,8 @@ item.lifeaquatic:material.ingotNickel.name=Nickel Ingot
 item.lifeaquatic:material.ingotBronze.name=Bronze Ingot
 item.lifeaquatic:material.ingotBrass.name=Brass Ingot
 
+item.lifeaquatic:tool.wrench.name=Pearlescent Wrench
+
 # blocks
 tile.lifeaquatic:Oyster.name=Nacreous Oyster
 
