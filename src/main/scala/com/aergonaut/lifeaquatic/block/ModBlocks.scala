@@ -5,7 +5,6 @@ import com.aergonaut.lib.core.TInitializer
 import com.aergonaut.lifeaquatic.constants.Names
 import com.aergonaut.lifeaquatic.item.ModItems
 import cpw.mods.fml.common.registry.GameRegistry
-import net.minecraft.item.ItemStack
 
 object ModBlocks extends TInitializer {
   final val PearlBlock: BlockBase = new PearlBlock
@@ -18,6 +17,8 @@ object ModBlocks extends TInitializer {
   final val CopperBlock: BlockBase = new CopperBlock
   final val TinBlock: BlockBase = new TinBlock
   final val NickelBlock: BlockBase = new NickelBlock
+  final val BronzeBlock: BlockBase = new BronzeBlock
+  final val BrassBlock: BlockBase = new BrassBlock
 
   override def preInit(): Boolean = {
     GameRegistry.registerBlock(PearlBlock, Names.Blocks.PearlBlock)
@@ -30,10 +31,22 @@ object ModBlocks extends TInitializer {
     GameRegistry.registerBlock(CopperBlock, Names.Blocks.CopperBlock)
     GameRegistry.registerBlock(TinBlock, Names.Blocks.TinBlock)
     GameRegistry.registerBlock(NickelBlock, Names.Blocks.NickelBlock)
+    GameRegistry.registerBlock(BronzeBlock, Names.Blocks.BronzeBlock)
+    GameRegistry.registerBlock(BrassBlock, Names.Blocks.BrassBlock)
 
-    ItemHelper.registerWithHandlers("oreCopper", new ItemStack(CopperOre))
-    ItemHelper.registerWithHandlers("oreTin", new ItemStack(TinOre))
-    ItemHelper.registerWithHandlers("oreNickel", new ItemStack(NickelOre))
+    ItemHelper.registerWithHandlers("oreCopper", ItemHelper.stack(CopperOre))
+    ItemHelper.registerWithHandlers("oreTin", ItemHelper.stack(TinOre))
+    ItemHelper.registerWithHandlers("oreNickel", ItemHelper.stack(NickelOre))
+
+    true
+  }
+
+  override def initialize(): Boolean = {
+    ItemHelper.addTwoWayStorageRecipe(ItemHelper.stack(CopperBlock), ItemHelper.stack(ModItems.CopperIngot))
+    ItemHelper.addTwoWayStorageRecipe(ItemHelper.stack(TinBlock), ItemHelper.stack(ModItems.TinIngot))
+    ItemHelper.addTwoWayStorageRecipe(ItemHelper.stack(NickelBlock), ItemHelper.stack(ModItems.NickelIngot))
+    ItemHelper.addTwoWayStorageRecipe(ItemHelper.stack(BronzeBlock), ItemHelper.stack(ModItems.BronzeIngot))
+    ItemHelper.addTwoWayStorageRecipe(ItemHelper.stack(BrassBlock), ItemHelper.stack(ModItems.BrassIngot))
 
     true
   }

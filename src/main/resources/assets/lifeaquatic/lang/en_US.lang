@@ -7,6 +7,8 @@ item.lifeaquatic:LinenChest.name=Linen Shirt
 item.lifeaquatic:CopperIngot.name=Copper Ingot
 item.lifeaquatic:TinIngot.name=Tin Ingot
 item.lifeaquatic:NickelIngot.name=Nickel Ingot
+item.lifeaquatic:BronzeIngot.name=Bronze Ingot
+item.lifeaquatic:BrassIngot.name=Brass Ingot
 
 # blocks
 tile.lifeaquatic:PearlBlock.name=Pearl Block
@@ -15,6 +17,8 @@ tile.lifeaquatic:Oyster.name=Nacreous Oyster
 tile.lifeaquatic:CopperBlock.name=Copper Block
 tile.lifeaquatic:TinBlock.name=Tin Block
 tile.lifeaquatic:NickelBlock.name=Nickel Block
+tile.lifeaquatic:BronzeBlock.name=Bronze Block
+tile.lifeaquatic:BrassBlock.name=Brass Block
 
 # ores
 tile.lifeaquatic:CopperOre.name=Copper Ore

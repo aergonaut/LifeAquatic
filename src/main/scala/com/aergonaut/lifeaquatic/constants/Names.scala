@@ -8,6 +8,8 @@ object Names {
     final val CopperBlock = "CopperBlock"
     final val TinBlock = "TinBlock"
     final val NickelBlock = "NickelBlock"
+    final val BronzeBlock = "BronzeBlock"
+    final val BrassBlock = "BrassBlock"
   }
 
   object Ore {
@@ -32,6 +34,8 @@ object Names {
       final val Copper = "CopperIngot"
       final val Tin = "TinIngot"
       final val Nickel = "NickelIngot"
+      final val Bronze = "BronzeIngot"
+      final val Brass = "BrassIngot"
     }
   }
 
