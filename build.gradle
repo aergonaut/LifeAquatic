@@ -121,3 +121,5 @@ distributions {
 tasks.distTar.compression = Compression.GZIP
 
 task release(dependsOn: ['build', 'distZip', 'distTar'])
+
+idea { module { inheritOutputDirs = true } }

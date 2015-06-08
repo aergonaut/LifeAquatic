@@ -10,7 +10,7 @@ import net.minecraftforge.oredict.OreDictionary
 
 object ModItems extends TInitializer {
   final val Pearl: ItemBase = new Pearl
-
+  final val Kelp: ItemBase = new Kelp
   final val LinenHelmet: ItemArmorBase = new LinenHelmet
   final val LinenChest: ItemArmorBase = new LinenChest
 
@@ -26,6 +26,7 @@ object ModItems extends TInitializer {
     GameRegistry.registerItem(ToolManual, Names.Items.Tools.Manual)
 
     GameRegistry.registerItem(Pearl, Names.Items.Pearl)
+    GameRegistry.registerItem(Kelp, Names.Items.Kelp)
 
     GameRegistry.registerItem(LinenHelmet, Names.Items.Armor.LinenHelmet)
     GameRegistry.registerItem(LinenChest, Names.Items.Armor.LinenChest)

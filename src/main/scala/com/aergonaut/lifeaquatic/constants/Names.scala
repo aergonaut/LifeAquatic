@@ -20,6 +20,7 @@ object Names {
 
   object Items {
     final val Pearl = "Pearl"
+    final val Kelp = "Kelp"
 
     object Armor {
       final val LinenHelmet = "LinenHelmet"
