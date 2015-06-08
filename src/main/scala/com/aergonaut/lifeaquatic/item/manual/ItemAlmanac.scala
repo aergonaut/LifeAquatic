@@ -7,7 +7,7 @@ import net.minecraft.entity.player.EntityPlayer
 import net.minecraft.item.ItemStack
 import net.minecraft.world.World
 
-class ItemAlmanac extends ItemBase(Names.Items.Tools.Almanac) {
+class ItemAlmanac extends ItemBase(Names.Items.Tool.Almanac) {
   override def onItemRightClick(stack: ItemStack, world: World, player: EntityPlayer): ItemStack = {
     if (world.isRemote) {
       player.openGui(LifeAquatic, Guis.Almanac, world, player.posX.toInt, player.posY.toInt, player.posZ.toInt)
