@@ -17,5 +17,15 @@ object Textures {
     private final val GuiSheetsDir = s"${ResourcePrefix}textures/gui"
 
     final val Manual = s"${GuiSheetsDir}/manual.png"
+
+    final val Vat = s"${GuiSheetsDir}/vat.png"
+
+    final val Calcinator = s"${GuiSheetsDir}/furnace.png"
+
+    object Elements {
+      private final val ElementsDir = s"${GuiSheetsDir}/elements"
+
+      final val FluidTank = s"${ElementsDir}/fluidTank.png"
+    }
   }
 }

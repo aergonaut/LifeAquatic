@@ -74,6 +74,10 @@ repositories {
         name "Mobius Repo"
         url "http://mobiusstrip.eu/maven"
     }
+    maven {
+        name = "sonatype"
+        url = "https://oss.sonatype.org/content/repositories/snapshots/"
+    }
 }
 
 dependencies {
@@ -110,7 +114,7 @@ distributions {
       from(jar.destinationDir) {
         include "*.jar"
       }
-      
+
       from("./") {
         include "LICENSE"
       }

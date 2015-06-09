@@ -3,6 +3,7 @@ package com.aergonaut.lib.manual.gui
 import com.aergonaut.lib.manual.{TManual, TManualSection}
 import net.minecraft.client.Minecraft
 import net.minecraft.client.gui.{FontRenderer, GuiButton, GuiScreen}
+import net.minecraft.item.ItemStack
 import net.minecraft.util.ResourceLocation
 import net.minecraftforge.client.event.GuiScreenEvent.ActionPerformedEvent
 import net.minecraftforge.common.MinecraftForge
@@ -20,6 +21,9 @@ abstract class TGuiManual extends GuiScreen {
   val texture: ResourceLocation
 
   val manual: TManual
+
+  var mouseX: Int = 0
+  var mouseY: Int = 0
 
   protected var activeSection: TManualSection = _
 
@@ -39,6 +43,9 @@ abstract class TGuiManual extends GuiScreen {
   }
 
   override def drawScreen(mx: Int, my: Int, uselessFloat: Float): Unit = {
+    mouseX = mx
+    mouseY = my
+
     GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F)
 
     // draw the book
@@ -113,4 +120,6 @@ abstract class TGuiManual extends GuiScreen {
   }
 
   override def doesGuiPauseGame(): Boolean = false
+
+  def drawTooltip(p_146285_1_ : ItemStack, p_146285_2_ : Int, p_146285_3_ : Int): Unit = renderToolTip(p_146285_1_, p_146285_2_, p_146285_3_)
 }

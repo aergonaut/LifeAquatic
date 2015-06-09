@@ -6,15 +6,28 @@ item.lifeaquatic:SwimTrunkShorts.name=Swim Suit
 item.lifeaquatic:LinenHelmet.name=Zissou's Red Cap
 item.lifeaquatic:LinenChest.name=Linen Shirt
 
+item.lifeaquatic:ironCasing.name=Light Machine Casing
+item.lifeaquatic:bronzeCasing.name=Firm Machine Casing
+item.lifeaquatic:brassCasing.name=Galvanized Machine Casing
+
 item.lifeaquatic:material.pearl.name=Pearl
 
-item.lifeaquatic:material.ingotCopper.name=Copper Ingot
-item.lifeaquatic:material.ingotTin.name=Tin Ingot
-item.lifeaquatic:material.ingotNickel.name=Nickel Ingot
-item.lifeaquatic:material.ingotBronze.name=Bronze Ingot
-item.lifeaquatic:material.ingotBrass.name=Brass Ingot
+item.lifeaquatic:metal.ingot.copper.name=Copper Ingot
+item.lifeaquatic:metal.ingot.tin.name=Tin Ingot
+item.lifeaquatic:metal.ingot.nickel.name=Nickel Ingot
+item.lifeaquatic:metal.ingot.bronze.name=Bronze Ingot
+item.lifeaquatic:metal.ingot.brass.name=Brass Ingot
 
 item.lifeaquatic:tool.wrench.name=Pearlescent Wrench
+item.lifeaquatic:tool.lens.name=Inquisitor's Lens
+
+item.lifeaquatic:tool.lavaPearl.name=Lava Pearl
+
+item.lifeaquatic:metal.calx.copper.name=Copper Ash
+item.lifeaquatic:metal.calx.tin.name=Tin Ash
+item.lifeaquatic:metal.calx.iron.name=Iron Ash
+item.lifeaquatic:metal.calx.gold.name=Gold Ash
+item.lifeaquatic:metal.calx.nickel.name=Nickel Ash
 
 # blocks
 tile.lifeaquatic:Oyster.name=Nacreous Oyster
@@ -27,20 +40,55 @@ tile.lifeaquatic:storage.nickel.name=Nickel Block
 tile.lifeaquatic:storage.bronze.name=Bronze Block
 tile.lifeaquatic:storage.brass.name=Brass Block
 
+# fluids
+fluid.aqueous_copper=Aqueous Copper
+fluid.aqueous_tin=Aqueous Tin
+fluid.aqueous_iron=Aqueous Iron
+fluid.aqueous_gold=Aqueous Gold
+
 # ores
 tile.lifeaquatic:ore.copper.name=Copper Ore
 tile.lifeaquatic:ore.tin.name=Tin Ore
 tile.lifeaquatic:ore.nickel.name=Nickel Ore
 
-# almanac
+# machines
+tile.lifeaquatic:machine.vatCasing.name=Vat Casing
+tile.lifeaquatic:machine.vatSiding.name=Vat Siding
+tile.lifeaquatic:machine.vatController.name=Vat Controller
+
+tile.lifeaquatic:machine.calcinatorBrick.name=Calcinator Brick
+
+
+# --- ALMANAC
+
 lifeaquatic.manuals.almanac.title=Undersea Almanac
 
+# --- Intro
 lifeaquatic.manuals.almanac.chapters.introduction.title=Introduction
-lifeaquatic.manuals.almanac.chapters.introduction.page0=Greetings, undersea explorer!<br><br>The book you have in your hand contains all the knowledge I have collected during my travels through the deep.<br><br>While I have traveled far, the ocean is vast and I do not pretend to have seen it all.
+lifeaquatic.manuals.almanac.chapters.introduction.page0=Greetings, undersea explorer!<br><br>The book you have in your hand contains all the knowledge I have collected during my travels through §1the deep§8.<br><br>While I have traveled far, the ocean is vast and I do not pretend to have seen it all.
 lifeaquatic.manuals.almanac.chapters.introduction.page1=The seas contain many varied treasures and wonders to discover! What I have catalogued here is but a meagre sampling of what the deep hides.<br><br>I pray you will add to this chronicle with the discoveries you make on your travels.<br><br>Sincerely,<br>Steve
 
+# --- Ores
 lifeaquatic.manuals.almanac.chapters.ores.title=Ores and Resources
 lifeaquatic.manuals.almanac.chapters.ores.page0=Exploration of the sea requires specialized equipment to protect the human body from the extreme conditions.<br><br>Simple iron is insufficient-- we must use other, more robust materials instead.
-lifeaquatic.manuals.almanac.chapters.ores.page1=Copper Ore is found in the world between layers 38 and 48, and requires a Stone Pickaxe to harvest.<br><br>The ore will smelt into copper ingots which are used in crafting basic machines and gear, as well as in alloying.
-lifeaquatic.manuals.almanac.chapters.ores.page2=Tin Ore is found in the world between layers 18 and 28, and requires a Stone Pickaxe to harvest.<br><br>The ore will smelt into tin ingots which are used in crafting basic machines and gear, as well as in alloying.
-lifeaquatic.manuals.almanac.chapters.ores.page3=Nickel Ore is found in the world between layers 33 and 43, and requires an Iron Pickaxe to harvest.<br><br>The ore will smelt into nickel ingots which are used primarily in alloying and creating equipment.<br><br>Nickel is exceptionally resistant to corrosion and is thus well-suited for use in aquatic equipment.
+lifeaquatic.manuals.almanac.chapters.ores.page1=§6Copper Ore§8 is found in the world between layers 38 and 48, and requires a Stone Pickaxe to harvest.<br><br>The ore will smelt into copper ingots which are used in crafting basic machines and gear, as well as in alloying.
+lifeaquatic.manuals.almanac.chapters.ores.page2=§3Tin Ore§8 is found in the world between layers 18 and 28, and requires a Stone Pickaxe to harvest.<br><br>The ore will smelt into tin ingots which are used in crafting basic machines and gear, as well as in alloying.
+lifeaquatic.manuals.almanac.chapters.ores.page3=§0Nickel Ore§8 is found in the world between layers 33 and 43, and requires an Iron Pickaxe to harvest.<br><br>The ore will smelt into nickel ingots.<br><br>Nickel is exceptionally resistant to corrosion and is thus well-suited for use in aquatic equipment.
+
+# --- Basic Tools
+lifeaquatic.manuals.almanac.chapters.tools.title=Basic Tools
+
+# --- --- Wrench
+lifeaquatic.manuals.almanac.chapters.tools.wrench.title=Pearlescent Wrench
+lifeaquatic.manuals.almanac.chapters.tools.wrench.page0=The general go-to tool for any aspiring undersea explorer is the §1Pearlescent Wrench§8.<br><br>It is made from a pearl, some tin, and two iron ingots.<br><br>Right-clicking on a device will rotate it, while doing so while sneaking will instantly dismantle it.
+
+# --- --- Lens
+lifeaquatic.manuals.almanac.chapters.tools.lens.title=Inquisitor's Lens
+lifeaquatic.manuals.almanac.chapters.tools.lens.page0=For when things go wrong, reach for the §5Inquisitor's Lens§8 to help give you a closer look at your machines.<br><br>Right-clicking on a device with the lens will show debugging information about that device, and report any problems it might have.
+
+# --- Basic Machines
+lifeaquatic.manuals.almanac.chapters.machines.title=Basic Machines
+
+# --- --- Furnace
+lifeaquatic.manuals.almanac.chapters.machines.furnace.title=Calcinator
+lifeaquatic.manuals.almanac.chapters.machines.furnace.page0=The §4Calcinator§8 is a large structure constructed of a total of 24 Calcinator Bricks in a 3x4x2 arrangement.

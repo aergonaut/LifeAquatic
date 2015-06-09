@@ -2,19 +2,23 @@ package com.aergonaut.lifeaquatic.block
 
 import cofh.lib.util.helpers.ItemHelper
 import com.aergonaut.lib.core.TInitializer
-import com.aergonaut.lifeaquatic.block.ore.{CopperOre, NickelOre, TinOre}
+import com.aergonaut.lifeaquatic.block.furnace.CalcinatorBrick
 import com.aergonaut.lifeaquatic.block.storage._
+import com.aergonaut.lifeaquatic.block.vat.{VatCasing, VatSiding}
 import com.aergonaut.lifeaquatic.constants.Names
-import com.aergonaut.lifeaquatic.item.ModItems
+import com.aergonaut.lifeaquatic.item.{ItemBlockBase, ModItems}
 import cpw.mods.fml.common.registry.GameRegistry
+import net.minecraft.block.material.Material
+import net.minecraft.init.{Items, Blocks}
+import net.minecraft.item.ItemStack
+import net.minecraftforge.fluids.{FluidRegistry, Fluid}
+import net.minecraftforge.oredict.OreDictionary
 
 object ModBlocks extends TInitializer {
   final val PearlBlock: BlockBase = new PearlBlock
   final val Oyster: BlockBase = new Oyster
 
-  final val CopperOre: BlockBase = new CopperOre
-  final val TinOre: BlockBase = new TinOre
-  final val NickelOre: BlockBase = new NickelOre
+  final val Ore: BlockBase = new BlockBase("ore", Material.rock, Vector("copper", "tin", "nickel"))
 
   final val CopperBlock: BlockBase = new CopperBlock
   final val TinBlock: BlockBase = new TinBlock
@@ -22,13 +26,29 @@ object ModBlocks extends TInitializer {
   final val BronzeBlock: BlockBase = new BronzeBlock
   final val BrassBlock: BlockBase = new BrassBlock
 
+  final val VatCasing: BlockBase = new VatCasing
+  final val VatSiding: BlockBase = new VatSiding
+
+  final val FurnaceBlock: BlockBase = new CalcinatorBrick
+
+  final val AqueousCopper: Fluid = new Fluid("aqueous_copper")
+  final val AqueousTin: Fluid = new Fluid("aqueous_tin")
+  final val AqueousIron: Fluid = new Fluid("aqueous_iron")
+  final val AqueousGold: Fluid = new Fluid("aqueous_gold")
+
+  var CopperOre: ItemStack = _
+  var TinOre: ItemStack = _
+  var NickelOre: ItemStack = _
+
   override def preInit(): Boolean = {
     GameRegistry.registerBlock(PearlBlock, Names.Blocks.Storage.Pearl)
     GameRegistry.registerBlock(Oyster, Names.Blocks.Oyster)
 
-    GameRegistry.registerBlock(CopperOre, Names.Blocks.Ore.Copper)
-    GameRegistry.registerBlock(TinOre, Names.Blocks.Ore.Tin)
-    GameRegistry.registerBlock(NickelOre, Names.Blocks.Ore.Nickel)
+    GameRegistry.registerBlock(Ore, classOf[ItemBlockBase], "ore")
+
+    CopperOre = ItemHelper.stack(Ore, 1, 0)
+    TinOre = ItemHelper.stack(Ore, 1, 1)
+    NickelOre = ItemHelper.stack(Ore, 1, 2)
 
     GameRegistry.registerBlock(CopperBlock, Names.Blocks.Storage.Copper)
     GameRegistry.registerBlock(TinBlock, Names.Blocks.Storage.Tin)
@@ -36,28 +56,50 @@ object ModBlocks extends TInitializer {
     GameRegistry.registerBlock(BronzeBlock, Names.Blocks.Storage.Bronze)
     GameRegistry.registerBlock(BrassBlock, Names.Blocks.Storage.Brass)
 
-    ItemHelper.registerWithHandlers("oreCopper", ItemHelper.stack(CopperOre))
-    ItemHelper.registerWithHandlers("oreTin", ItemHelper.stack(TinOre))
-    ItemHelper.registerWithHandlers("oreNickel", ItemHelper.stack(NickelOre))
+    GameRegistry.registerBlock(VatCasing, Names.Blocks.Machine.VatCasing)
+    GameRegistry.registerBlock(VatSiding, Names.Blocks.Machine.VatSiding)
+
+    GameRegistry.registerBlock(FurnaceBlock, Names.Blocks.Machine.CalcinatorBrick)
+
+    OreDictionary.registerOre("oreCopper", ItemHelper.stack(Ore, 1, 0))
+    OreDictionary.registerOre("oreTin", ItemHelper.stack(Ore, 1, 1))
+    OreDictionary.registerOre("oreNickel", ItemHelper.stack(Ore, 1, 2))
+
+    registerFluids()
 
     true
   }
 
   override def initialize(): Boolean = {
-    ItemHelper.addTwoWayStorageRecipe(ItemHelper.stack(CopperBlock), ItemHelper.stack(ModItems.CopperIngot))
-    ItemHelper.addTwoWayStorageRecipe(ItemHelper.stack(TinBlock), ItemHelper.stack(ModItems.TinIngot))
-    ItemHelper.addTwoWayStorageRecipe(ItemHelper.stack(NickelBlock), ItemHelper.stack(ModItems.NickelIngot))
-    ItemHelper.addTwoWayStorageRecipe(ItemHelper.stack(BronzeBlock), ItemHelper.stack(ModItems.BronzeIngot))
-    ItemHelper.addTwoWayStorageRecipe(ItemHelper.stack(BrassBlock), ItemHelper.stack(ModItems.BrassIngot))
+    ItemHelper.addTwoWayStorageRecipe(ItemHelper.stack(CopperBlock), ItemHelper.cloneStack(ModItems.CopperIngot))
+    ItemHelper.addTwoWayStorageRecipe(ItemHelper.stack(TinBlock), ItemHelper.cloneStack(ModItems.TinIngot))
+    ItemHelper.addTwoWayStorageRecipe(ItemHelper.stack(NickelBlock), ItemHelper.cloneStack(ModItems.NickelIngot))
+    ItemHelper.addTwoWayStorageRecipe(ItemHelper.stack(BronzeBlock), ItemHelper.cloneStack(ModItems.BronzeIngot))
+    ItemHelper.addTwoWayStorageRecipe(ItemHelper.stack(BrassBlock), ItemHelper.cloneStack(ModItems.BrassIngot))
+
+    ItemHelper.addSmelting(ItemHelper.cloneStack(ModItems.CopperIngot), ItemHelper.stack(Ore, 1, 0), 0.3F)
+    ItemHelper.addSmelting(ItemHelper.cloneStack(ModItems.TinIngot), ItemHelper.stack(Ore, 1, 1), 0.3F)
+    ItemHelper.addSmelting(ItemHelper.cloneStack(ModItems.NickelIngot), ItemHelper.stack(Ore, 1, 2), 0.3F)
 
     true
   }
 
   override def postInit(): Boolean = {
-    ItemHelper.addSmelting(ItemHelper.stack(ModItems.CopperIngot), ItemHelper.stack(CopperOre), 0.6F)
-    ItemHelper.addSmelting(ItemHelper.stack(ModItems.TinIngot), ItemHelper.stack(TinOre), 0.7F)
-    ItemHelper.addSmelting(ItemHelper.stack(ModItems.NickelIngot), ItemHelper.stack(NickelOre), 1.0F)
 
     true
+  }
+
+  def registerFluids(): Unit = {
+    AqueousCopper.setDensity(3000).setViscosity(6000)
+    FluidRegistry.registerFluid(AqueousCopper)
+
+    AqueousTin.setDensity(3000).setViscosity(6000)
+    FluidRegistry.registerFluid(AqueousTin)
+
+    AqueousIron.setDensity(3000).setViscosity(6000)
+    FluidRegistry.registerFluid(AqueousIron)
+
+    AqueousGold.setDensity(3000).setViscosity(6000)
+    FluidRegistry.registerFluid(AqueousGold)
   }
 }

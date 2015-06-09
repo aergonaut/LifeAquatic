@@ -1,26 +1,19 @@
 package com.aergonaut.lib.manual
 
 import com.aergonaut.lib.manual.gui.{GuiPagination, TGuiManual}
+import com.aergonaut.lib.manual.page.ManualPage
 
-class ManualChapter(theManual: TManual, theParent: Option[TManualSection], localizedName: String, pages: Seq[ManualPage]) extends TManualSection {
-  override val name: String = localizedName
-
-  override val manual: TManual = theManual
-
-  override val parent: Option[TManualSection] = theParent
-
+class ManualChapter(override val manual: TManual, override val parent: Option[TManualSection], override val name: String, pages: Seq[ManualPage]) extends TManualSection {
   private var activePage = 0
 
   override def renderSection(gui: TGuiManual): Unit = {
     val fontHeight = gui.fontHeight
 
-    if (activePage == 0) {
-      renderTitle(gui)
-    }
+    renderTitle(gui)
 
-    val yOffset = if (activePage == 0) 3 * fontHeight else 16
+    val yOffset = 3 * fontHeight
 
-    gui.font.drawSplitString(pages(activePage).text, 10 + gui.left, yOffset + gui.top, 120, manual.textColor)
+    pages(activePage).renderPage(gui, manual, yOffset)
   }
 
   override def addButtons(gui: TGuiManual): Unit = {
@@ -29,6 +22,7 @@ class ManualChapter(theManual: TManual, theParent: Option[TManualSection], local
       gui.addButton(GuiPagination.Previous(gui, this, gui.nextButtonId, gui.left + 0, gui.top + gui.guiHeight + 2))
       gui.addButton(GuiPagination.Forward(gui, this, gui.nextButtonId, gui.left + gui.guiWidth - 21, gui.top + gui.guiHeight + 2))
     }
+    pages(activePage).addButtons(gui)
     super.addButtons(gui)
   }
 
