@@ -6,7 +6,7 @@ import com.aergonaut.lifeaquatic.block.ModBlocks
 import com.aergonaut.lifeaquatic.item.ModItems
 import com.aergonaut.lifeaquatic.item.tool.LavaPearl
 import cpw.mods.fml.common.registry.GameRegistry
-import net.minecraft.init.{Blocks, Items}
+import net.minecraft.init.Blocks
 import net.minecraft.init.Items
 import net.minecraft.item.ItemStack
 import net.minecraft.item.crafting.{CraftingManager, IRecipe}
@@ -17,6 +17,9 @@ object Recipes extends TInitializer {
   var recipePearlBlock: IRecipe = _
   var recipeLinenHelmet: IRecipe = _
   var recipeLinenChest: IRecipe = _
+  var recipeSwimTruckMask: IRecipe = _
+  var recipeSwimTrunkFins: IRecipe = _
+  var recipeSwimTrunkShorts: IRecipe = _
   var recipeWrench: IRecipe = _
   var recipeLens: IRecipe = _
   var recipeIronCasing: IRecipe = _
@@ -51,6 +54,7 @@ object Recipes extends TInitializer {
       char2Character('l'), new ItemStack(Items.leather),
       char2Character('g'), new ItemStack(Blocks.glass_pane)
     )
+    recipeSwimTruckMask = getLastRecipeAdded()
 
     // swim trunk - fins
     GameRegistry.addRecipe(new ItemStack(ModItems.SwimTrunkFins),
@@ -59,6 +63,7 @@ object Recipes extends TInitializer {
       "l l",
       char2Character('l'), new ItemStack(Items.leather)
     )
+    recipeSwimTrunkFins = getLastRecipeAdded()
 
     // swim trunk - fins
     GameRegistry.addRecipe(new ItemStack(ModItems.SwimTrunkShorts),
@@ -67,6 +72,8 @@ object Recipes extends TInitializer {
       "   ",
       char2Character('l'), new ItemStack(Items.leather)
     )
+    recipeSwimTrunkShorts = getLastRecipeAdded()
+
     GameRegistry.addRecipe(new ItemStack(ModItems.SwimTrunkShorts),
       "   ",
       "lll",
