@@ -3,7 +3,7 @@ package com.aergonaut.lifeaquatic.item
 import cofh.lib.util.helpers.ItemHelper
 import com.aergonaut.lib.core.TInitializer
 import com.aergonaut.lifeaquatic.constants.Names
-import com.aergonaut.lifeaquatic.item.armor.{ItemArmorBase, LinenChest, LinenHelmet}
+import com.aergonaut.lifeaquatic.item.armor.{ItemArmorBase, LinenChest, LinenHelmet, SwimTrunkFaceMask, SwimTrunkFins, SwimTrunkShorts}
 import com.aergonaut.lifeaquatic.item.manual.ItemAlmanac
 import com.aergonaut.lifeaquatic.item.material._
 import com.aergonaut.lifeaquatic.item.tool.Wrench
@@ -12,6 +12,11 @@ import net.minecraftforge.oredict.OreDictionary
 
 object ModItems extends TInitializer {
   final val Pearl: ItemBase = new Pearl
+
+  final val SwimTrunkFaceMask: ItemArmorBase = new SwimTrunkFaceMask
+  final val SwimTrunkFins: ItemArmorBase = new SwimTrunkFins
+  final val SwimTrunkShorts: ItemArmorBase = new SwimTrunkShorts
+
 
   final val LinenHelmet: ItemArmorBase = new LinenHelmet
   final val LinenChest: ItemArmorBase = new LinenChest
@@ -32,6 +37,10 @@ object ModItems extends TInitializer {
     GameRegistry.registerItem(Wrench, Names.Items.Tool.Wrench)
 
     GameRegistry.registerItem(Pearl, Names.Items.Material.Pearl)
+
+    GameRegistry.registerItem(SwimTrunkFaceMask, Names.Items.Armor.SwimTrunkFaceMask)
+    GameRegistry.registerItem(SwimTrunkFins, Names.Items.Armor.SwimTrunkFins)
+    GameRegistry.registerItem(SwimTrunkShorts, Names.Items.Armor.SwimTrunkShorts)
 
     GameRegistry.registerItem(LinenHelmet, Names.Items.Armor.LinenHelmet)
     GameRegistry.registerItem(LinenChest, Names.Items.Armor.LinenChest)

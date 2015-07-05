@@ -1,6 +1,8 @@
 # items
 item.lifeaquatic:ItemAlmanac.name=Undersea Almanac
-
+item.lifeaquatic:SwimTrunkFaceMask.name=Face Mask
+item.lifeaquatic:SwimTrunkFins.name=Swim Fins
+item.lifeaquatic:SwimTrunkShorts.name=Swim Suit
 item.lifeaquatic:LinenHelmet.name=Zissou's Red Cap
 item.lifeaquatic:LinenChest.name=Linen Shirt
 

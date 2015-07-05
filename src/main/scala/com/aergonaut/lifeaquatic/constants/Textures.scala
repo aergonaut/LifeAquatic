@@ -9,6 +9,8 @@ object Textures {
     final val ArmorSheetFormat = s"${ArmorSheetsDir}/%s.%s.png"
 
     final val LinenArmor = "LinenArmor"
+    final val SwimTrunkArmor = "SwimTrunkArmor"
+
   }
 
   object Gui {
